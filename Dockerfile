@@ -1,2 +1,4 @@
 FROM nvidia/cuda:9.1-cudnn7-runtime-ubuntu16.04
-# Set anacond
+# Set anaconda path
+ENV ANACONDA /opt/anaconda
+ENV PATH $ANA
