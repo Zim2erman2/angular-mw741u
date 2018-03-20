@@ -4,4 +4,6 @@ ENV ANACONDA /opt/anaconda
 ENV PATH $ANACONDA/bin:$PATH
 RUN apt-get update && apt-get install -y --no-install-recommends \
          wget \
- 
+         libopencv-dev \
+         python-opencv \
+  
