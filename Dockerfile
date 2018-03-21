@@ -8,4 +8,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          python-opencv \
          build-essential \
          cmake \
-         g
+         git \
+         curl \
+         ca-certificates \
