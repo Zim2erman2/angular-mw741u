@@ -13,4 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          ca-certificates \
          libjpeg-dev \
          libpng-dev \
-    
+         axel \
+         zip \
+         unzip
+RUN wget h
