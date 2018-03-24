@@ -16,4 +16,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          axel \
          zip \
          unzip
-RUN wget h
+RUN wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux
