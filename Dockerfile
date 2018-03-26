@@ -17,4 +17,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          zip \
          unzip
 RUN wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh -P /tmp
-RUN bash /tmp/Anaconda3-5.0.1-Linux-x86_
+RUN bash /tmp/Anaconda3-5.0.1-Linux-x86_64.sh -b -p $ANACONDA
+RUN rm /tm
