@@ -1,3 +1,3 @@
 ## creative commons
 
-# Att
+# Attribution-NonCommercial-ShareAlike 4.0 Internati
