@@ -6,4 +6,4 @@ Creative Commons Corporation (“Creative Commons”) is not a law firm and does
 
 ### Using Creative Commons Public Licenses
 
-Creative Common
+Creative Commons public licenses provide a standard set of
