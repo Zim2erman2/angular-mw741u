@@ -6,4 +6,4 @@ Creative Commons Corporation (“Creative Commons”) is not a law firm and does
 
 ### Using Creative Commons Public Licenses
 
-Creative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public 
+Creative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following consideration
