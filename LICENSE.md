@@ -14,4 +14,4 @@ Creative Commons public licenses provide a standard set of terms and conditions 
 
 ## Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
 
-By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-NonCommercial-ShareAlike 4
+By exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License ("Public License").
