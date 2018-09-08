@@ -18,4 +18,4 @@ By exercising the Licensed Rights (defined below), You accept and agree to be bo
 
 ### Section 1 – Definitions.
 
-a. __Adapted Material__ means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altere
+a. __Adapted Material__ means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner
