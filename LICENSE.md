@@ -20,4 +20,4 @@ By exercising the Licensed Rights (defined below), You accept and agree to be bo
 
 a. __Adapted Material__ means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.
 
-b. __Adapter's License__ means the license You apply to Your Copyri
+b. __Adapter's License__ means the license You apply to Your Copyright and Similar Rights in Your contributions to A
