@@ -22,4 +22,4 @@ a. __Adapted Material__ means material subject to Copyright and Similar Rights t
 
 b. __Adapter's License__ means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.
 
-c. __BY-NC-SA Compatible License__ means a license listed at 
+c. __BY-NC-SA Compatible License__ means a license listed at [creativecommons.org/compatiblelicenses](http://cr
