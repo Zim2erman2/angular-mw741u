@@ -24,4 +24,4 @@ b. __Adapter's License__ means the license You apply to Your Copyright and Simil
 
 c. __BY-NC-SA Compatible License__ means a license listed at [creativecommons.org/compatiblelicenses](http://creativecommons.org/compatiblelicenses), approved by Creative Commons as essentially the equivalent of this Public License.
 
-d. __Copyright and Similar Rights__ me
+d. __Copyright and Similar Rights__ means copyright and/or similar rights closely re
