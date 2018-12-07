@@ -26,4 +26,4 @@ c. __BY-NC-SA Compatible License__ means a license listed at [creativecommons.or
 
 d. __Copyright and Similar Rights__ means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.
 
-e. __Effective Technological Me
+e. __Effective Technological Measures__ means those measures that, in the absence of 
