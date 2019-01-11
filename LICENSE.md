@@ -34,4 +34,4 @@ g. __License Elements__ means the license attributes listed in the name of a Cre
 
 h. __Licensed Material__ means the artistic or literary work, database, or other material to which the Licensor applied this Public License.
 
-i. __Licensed Rights__ means the rights granted to You subject to 
+i. __Licensed Rights__ means the rights granted to You subject to the terms and conditions of this Public Li
