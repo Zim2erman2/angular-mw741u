@@ -32,4 +32,6 @@ f. __Exceptions and Limitations__ means fair use, fair dealing, and/or any other
 
 g. __License Elements__ means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution, NonCommercial, and ShareAlike.
 
-h. __Licensed Material__ means the artistic or literary work, database, or other materi
+h. __Licensed Material__ means the artistic or literary work, database, or other material to which the Licensor applied this Public License.
+
+i. __Lice
