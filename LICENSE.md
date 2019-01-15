@@ -36,4 +36,4 @@ h. __Licensed Material__ means the artistic or literary work, database, or other
 
 i. __Licensed Rights__ means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.
 
-h. __Licensor__ means the indiv
+h. __Licensor__ means the individual(s) or entity(ies) granting rights under this 
