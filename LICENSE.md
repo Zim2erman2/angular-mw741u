@@ -38,4 +38,4 @@ i. __Licensed Rights__ means the rights granted to You subject to the terms and 
 
 h. __Licensor__ means the individual(s) or entity(ies) granting rights under this Public License.
 
-i. __NonCommercial__ means not primarily intended for or directed towards commercial advantage or monetary compensation. For purposes o
+i. __NonCommercial__ means not primarily intended for or directed towards commercial advantage or monetary compensation. For purposes of this Public License, the exchange of the Licens
