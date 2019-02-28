@@ -42,4 +42,4 @@ i. __NonCommercial__ means not primarily intended for or directed towards commer
 
 j. __Share__ means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.
 
-k. __Sui Generis Database Rights__ means rights other than copyright resulting fro
+k. __Sui Generis Database Rights__ means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Counc
