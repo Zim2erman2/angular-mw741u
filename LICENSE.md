@@ -50,4 +50,4 @@ l. __You__ means the individual or entity exercising the Licensed Rights under t
 
 a. ___License grant.___
 
- 1. Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, 
+ 1. Subject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Right
