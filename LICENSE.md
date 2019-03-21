@@ -54,4 +54,6 @@ a. ___License grant.___
 
   A. reproduce and Share the Licensed Material, in whole or in part, for NonCommercial purposes only; and
 
-  B. produce, reproduce, and Share Ada
+  B. produce, reproduce, and Share Adapted Material for NonCommercial purposes only.
+
+ 2. __Exc
