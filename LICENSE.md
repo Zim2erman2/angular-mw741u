@@ -56,4 +56,4 @@ a. ___License grant.___
 
   B. produce, reproduce, and Share Adapted Material for NonCommercial purposes only.
 
- 2. __Exceptions and Limitations.__ For the avoidance of do
+ 2. __Exceptions and Limitations.__ For the avoidance of doubt, where Exceptions and Limitations apply to Yo
