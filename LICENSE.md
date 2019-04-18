@@ -58,4 +58,6 @@ a. ___License grant.___
 
  2. __Exceptions and Limitations.__ For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.
     
- 3. __Term.__ The term of this Public License is specified in Sec
+ 3. __Term.__ The term of this Public License is specified in Section 6(a).
+
+ 4. __Media and formats; technical m
