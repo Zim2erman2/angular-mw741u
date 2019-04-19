@@ -60,4 +60,4 @@ a. ___License grant.___
     
  3. __Term.__ The term of this Public License is specified in Section 6(a).
 
- 4. __Media and formats; technical modifications allowed.__ The Licensor autho
+ 4. __Media and formats; technical modifications allowed.__ The Licensor authorizes You to exercise the Licensed Rights in
