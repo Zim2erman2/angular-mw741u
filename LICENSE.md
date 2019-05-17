@@ -66,4 +66,4 @@ a. ___License grant.___
 
   A. __Offer from the Licensor – Licensed Material.__ Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.
 
-  B. __Additional offer from the Licensor – Adapted Material.__ Every recipient of Adapted Mate
+  B. __Additional offer from the Licensor – Adapted Material.__ Every recipient of Adapted Material from You automatically receives an off
