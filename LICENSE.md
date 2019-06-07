@@ -68,4 +68,4 @@ a. ___License grant.___
 
   B. __Additional offer from the Licensor – Adapted Material.__ Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.
 
-  C. __No downstream restrictions.__ You may not offer or impose any additional or different terms or conditions on, o
+  C. __No downstream restrictions.__ You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures t
