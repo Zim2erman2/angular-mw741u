@@ -74,4 +74,4 @@ a. ___License grant.___
     
 b. ___Other rights.___
 
- 1. Moral rights, such as the right of integrity, ar
+ 1. Moral rights, such as the right of integrity, are not licensed under this Public License
