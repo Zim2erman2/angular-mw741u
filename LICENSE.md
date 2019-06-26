@@ -78,4 +78,4 @@ b. ___Other rights.___
 
  2. Patent and trademark rights are not licensed under this Public License.
 
- 3. To the extent possible, the Licensor waives any right 
+ 3. To the extent possible, the Licensor waives any right to collect royalties from You for the exercis
