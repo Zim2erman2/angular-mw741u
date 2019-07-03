@@ -82,4 +82,4 @@ b. ___Other rights.___
     
 ### Section 3 – License Conditions.
 
-Your exercise of
+Your exercise of the Licensed Rights is expressly made subject to t
