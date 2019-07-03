@@ -86,4 +86,4 @@ Your exercise of the Licensed Rights is expressly made subject to the following 
 
 a. ___Attribution.___
 
- 1. If 
+ 1. If You Share the Licensed Material (including in mod
