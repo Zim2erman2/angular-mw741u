@@ -88,4 +88,6 @@ a. ___Attribution.___
 
  1. If You Share the Licensed Material (including in modified form), You must:
 
-  A. retain the following if it is supplied by the Licensor with the Licensed Material
+  A. retain the following if it is supplied by the Licensor with the Licensed Material:
+
+   i. identification of the creator(s) of the Li
