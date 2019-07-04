@@ -88,4 +88,4 @@ a. ___Attribution.___
 
  1. If You Share the Licensed Material (including in modified form), You must:
 
-  A. retain the followin
+  A. retain the following if it is supplied by the Licensor with the Licensed Material
