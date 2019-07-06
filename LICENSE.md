@@ -90,4 +90,4 @@ a. ___Attribution.___
 
   A. retain the following if it is supplied by the Licensor with the Licensed Material:
 
-   i. identification of the creator(s) of the Licensed Material and any others designated to receive at
+   i. identification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by
