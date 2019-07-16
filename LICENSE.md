@@ -96,4 +96,6 @@ a. ___Attribution.___
 
    iii. a notice that refers to this Public License;
 
-   iv. a notice that 
+   iv. a notice that refers to the disclaimer of warranties;
+
+ 
