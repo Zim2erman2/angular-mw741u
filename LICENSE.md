@@ -94,4 +94,6 @@ a. ___Attribution.___
 
    ii. a copyright notice;
 
-   iii. a notice that refers to t
+   iii. a notice that refers to this Public License;
+
+   iv. a notice that 
