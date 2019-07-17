@@ -100,4 +100,6 @@ a. ___Attribution.___
 
    v. a URI or hyperlink to the Licensed Material to the extent reasonably practicable;
 
-  B. indicate if You modified the Licensed Material and retain an indication of any previous
+  B. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and
+
+  C. indicate the Licensed
