@@ -102,4 +102,6 @@ a. ___Attribution.___
 
   B. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and
 
-  C. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hy
+  C. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.
+
+ 2. You may sa
