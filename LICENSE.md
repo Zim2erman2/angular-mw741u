@@ -102,4 +102,4 @@ a. ___Attribution.___
 
   B. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and
 
-  C. indicate the Licensed
+  C. indicate the Licensed Material is licensed under this Public 
