@@ -104,4 +104,4 @@ a. ___Attribution.___
 
   C. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.
 
- 2. You may satisfy the conditions in Section 3(a)(1) in any rea
+ 2. You may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and c
