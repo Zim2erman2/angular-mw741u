@@ -108,4 +108,6 @@ a. ___Attribution.___
 
  3. If requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.
 
-b.
+b. ___ShareAlike.___
+
+In addition to the conditio
