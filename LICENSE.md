@@ -110,4 +110,4 @@ a. ___Attribution.___
 
 b. ___ShareAlike.___
 
-In addition to the conditio
+In addition to the conditions in Section 3(a), if You Share Adapted Material You produce
