@@ -112,4 +112,4 @@ b. ___ShareAlike.___
 
 In addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.
 
- 
+ 1. The Adapter’s License You apply must 
