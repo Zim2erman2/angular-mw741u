@@ -116,4 +116,4 @@ In addition to the conditions in Section 3(a), if You Share Adapted Material You
 
  2. You must include the text of, or the URI or hyperlink to, the Adapter's License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.
 
- 3. You m
+ 3. You may not offer or impose any additional or different ter
