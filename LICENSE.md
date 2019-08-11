@@ -122,4 +122,4 @@ In addition to the conditions in Section 3(a), if You Share Adapted Material You
 
 Where the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:
 
-a. for the avoidance 
+a. for the avoidance of doubt, Section 2(a)(1) grants You the righ
