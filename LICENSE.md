@@ -118,4 +118,6 @@ In addition to the conditions in Section 3(a), if You Share Adapted Material You
 
  3. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter's License You apply.
 
-### Section 4 – Sui Generis
+### Section 4 – Sui Generis Database Rights.
+
+Where the Licensed Rights include S
