@@ -120,4 +120,6 @@ In addition to the conditions in Section 3(a), if You Share Adapted Material You
 
 ### Section 4 – Sui Generis Database Rights.
 
-Where the Licensed Rights include Sui Generis Database Rights that apply to Your us
+Where the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:
+
+a. for the avoidance 
