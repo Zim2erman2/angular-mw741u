@@ -124,4 +124,4 @@ Where the Licensed Rights include Sui Generis Database Rights that apply to Your
 
 a. for the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database for NonCommercial purposes only;
 
-b. if Yo
+b. if You include all or a substantial portion of the dat
