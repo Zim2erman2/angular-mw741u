@@ -130,4 +130,6 @@ c. You must comply with the conditions in Section 3(a) if You Share all or a sub
 
 For the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.
 
-### Section 5 – Disclaimer o
+### Section 5 – Disclaimer of Warranties and Limitation of Liability.
+
+a.
