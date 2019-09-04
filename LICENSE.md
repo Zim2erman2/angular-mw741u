@@ -132,4 +132,4 @@ For the avoidance of doubt, this Section 4 supplements and does not replace Your
 
 ### Section 5 – Disclaimer of Warranties and Limitation of Liability.
 
-a.
+a. __Unless otherwise separately undertaken b
