@@ -132,4 +132,4 @@ For the avoidance of doubt, this Section 4 supplements and does not replace Your
 
 ### Section 5 – Disclaimer of Warranties and Limitation of Liability.
 
-a. __Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This i
+a. __Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchant
