@@ -138,4 +138,6 @@ b. __To the extent possible, in no event will the Licensor be liable to You on a
 
 c. The disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.
 
-### Section 6 – Term and Ter
+### Section 6 – Term and Termination.
+
+a. This Public License applies for the term 
