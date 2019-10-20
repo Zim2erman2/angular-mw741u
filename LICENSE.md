@@ -140,4 +140,4 @@ c. The disclaimer of warranties and limitation of liability provided above shall
 
 ### Section 6 – Term and Termination.
 
-a. This Public License applies for the term of the Copyright and Similar Rights licensed here. How
+a. This Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, th
