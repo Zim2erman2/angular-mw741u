@@ -142,4 +142,4 @@ c. The disclaimer of warranties and limitation of liability provided above shall
 
 a. This Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.
 
-b. Where Your right to use the Licensed Material
+b. Where Your right to use the Licensed Material has terminated under Section 6(a), it reinst
