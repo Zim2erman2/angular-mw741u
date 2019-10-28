@@ -144,4 +144,6 @@ a. This Public License applies for the term of the Copyright and Similar Rights 
 
 b. Where Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:
 
- 1. automatically as of the date the violation is cured, provided it is cured within 30 days of Your 
+ 1. automatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or
+
+ 2. automatically as of t
