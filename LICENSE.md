@@ -146,4 +146,4 @@ b. Where Your right to use the Licensed Material has terminated under Section 6(
 
  1. automatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or
 
- 2. automatically as of the date the violation is cured, provided it is c
+ 2. automatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violat
