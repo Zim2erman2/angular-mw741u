@@ -148,4 +148,4 @@ b. Where Your right to use the Licensed Material has terminated under Section 6(
 
  2. automatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or
 
- For the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to 
+ For the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this P
