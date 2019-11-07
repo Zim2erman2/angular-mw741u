@@ -150,4 +150,4 @@ b. Where Your right to use the Licensed Material has terminated under Section 6(
 
  For the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.
 
-c. For the avoidance of doubt, th
+c. For the avoidance of doubt, the Licensor may also offer the Licensed Material und
