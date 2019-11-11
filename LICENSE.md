@@ -154,4 +154,6 @@ c. For the avoidance of doubt, the Licensor may also offer the Licensed Material
 
 d. Sections 1, 5, 6, 7, and 8 survive termination of this Public License.
 
-### Section 7 – Othe
+### Section 7 – Other Terms and Conditions.
+
+a. The Licensor shall not be 
