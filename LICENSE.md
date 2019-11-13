@@ -156,4 +156,4 @@ d. Sections 1, 5, 6, 7, and 8 survive termination of this Public License.
 
 ### Section 7 – Other Terms and Conditions.
 
-a. The Licensor shall not be bound by any additional or different terms 
+a. The Licensor shall not be bound by any additional or different terms or conditions communicated by You unless e
