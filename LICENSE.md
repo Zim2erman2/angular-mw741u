@@ -160,4 +160,6 @@ a. The Licensor shall not be bound by any additional or different terms or condi
 
 b. Any arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.
 
-### Section
+### Section 8 – Interpretation.
+
+a. For the avoidance of doubt
