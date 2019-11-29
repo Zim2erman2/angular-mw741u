@@ -166,4 +166,4 @@ a. For the avoidance of doubt, this Public License does not, and shall not be in
 
 b. To the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.
 
-c. No term or condition of this Pu
+c. No term or condition of this Public License will be waived and no failure to comply
