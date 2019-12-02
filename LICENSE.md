@@ -168,4 +168,4 @@ b. To the extent possible, if any provision of this Public License is deemed une
 
 c. No term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.
 
-d. Nothing in this Public 
+d. Nothing in this Public License constitutes or may be interpreted as a limi
