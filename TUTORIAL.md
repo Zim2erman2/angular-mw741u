@@ -3,4 +3,4 @@
 ![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg)
 ## MUNIT Tutorial
 
-In this short tutorial, we will guide you through setting up the system environment for running the MUNIT, which stands for multimodal unsupervised image-to
+In this short tutorial, we will guide you through setting up the system environment for running the MUNIT, which stands for multimodal unsupervised image-to-image translation, software and then show several usa
