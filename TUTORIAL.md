@@ -11,4 +11,6 @@ Most of the existing unsupervised/unpaired image-to-image translation algorithms
 
 ### Algorithm
 
-<img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/docs/munit_assumption.jpg" width="
+<img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/docs/munit_assumption.jpg" width="800" title="Assumption"> 
+
+MUNIT is based on the part
