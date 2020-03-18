@@ -13,4 +13,4 @@ Most of the existing unsupervised/unpaired image-to-image translation algorithms
 
 <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/docs/munit_assumption.jpg" width="800" title="Assumption"> 
 
-MUNIT is based on the part
+MUNIT is based on the partially-shared latent space assumption as 
