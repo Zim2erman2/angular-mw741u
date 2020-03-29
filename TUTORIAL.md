@@ -16,4 +16,4 @@ Most of the existing unsupervised/unpaired image-to-image translation algorithms
 MUNIT is based on the partially-shared latent space assumption as illustrated in (a) of the above image. Basically, it assumes that latent representation of an image can be decomposed into two parts where one represents content of the image that is shared across domains, while the other represents style of the image that is not-shared across domains. To realize this assumption, MUNIT uses 3 networks for each domain, which are 
 
 1. content encoder (for extracting a domain-shared latent code, content code)
-2. 
+2. style encoder (for extracting a domain-specific la
