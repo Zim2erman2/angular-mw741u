@@ -17,4 +17,6 @@ MUNIT is based on the partially-shared latent space assumption as illustrated in
 
 1. content encoder (for extracting a domain-shared latent code, content code)
 2. style encoder (for extracting a domain-specific latent code, style code)
-3. decoder (for generating an
+3. decoder (for generating an image using a content code and a style code)
+
+In
