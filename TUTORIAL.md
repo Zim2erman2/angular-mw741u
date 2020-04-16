@@ -22,3 +22,6 @@ MUNIT is based on the partially-shared latent space assumption as illustrated in
 In the test time as illustrated in (b) of the above image, when we want to translate an input image in the 1st domain (source domain) to a corresponding image in the 2nd domain (target domain). MUNIT first uses the content encoder in the source domain to extract a content codes, combines it with a randomly sampled style code from the target domain, and feed them to the decoder in the target domain to generate the translation. By sampling different style codes, MUNIT generates different translations. Since the style space is a continuous space, MUNIT essentially maps an input image in the source domain to a distribution of images in the target domain.  
 
 ### Requirments
+
+
+- Hardware: PC with NVIDIA Titan G
