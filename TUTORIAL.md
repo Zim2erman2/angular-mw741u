@@ -24,4 +24,4 @@ In the test time as illustrated in (b) of the above image, when we want to trans
 ### Requirments
 
 
-- Hardware: PC with NVIDIA Titan G
+- Hardware: PC with NVIDIA Titan GPU. For large resolution images, you need NVIDIA Tesla 
