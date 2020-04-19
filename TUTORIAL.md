@@ -25,4 +25,6 @@ In the test time as illustrated in (b) of the above image, when we want to trans
 
 
 - Hardware: PC with NVIDIA Titan GPU. For large resolution images, you need NVIDIA Tesla P100 or V100 GPUs, which have 16GB+ GPU memory. 
-- Software: *Ubuntu 16.04*, *CUDA 9.1*, *A
+- Software: *Ubuntu 16.04*, *CUDA 9.1*, *Anaconda3*, *pytorch 0.4.1*
+- System package
+  - `s
