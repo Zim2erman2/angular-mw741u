@@ -24,4 +24,5 @@ In the test time as illustrated in (b) of the above image, when we want to trans
 ### Requirments
 
 
-- Hardware: PC with NVIDIA Titan GPU. For large resolution images, you need NVIDIA Tesla P100 or V100 GPUs, which have 16GB+ GPU mem
+- Hardware: PC with NVIDIA Titan GPU. For large resolution images, you need NVIDIA Tesla P100 or V100 GPUs, which have 16GB+ GPU memory. 
+- Software: *Ubuntu 16.04*, *CUDA 9.1*, *A
