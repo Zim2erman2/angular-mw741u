@@ -29,4 +29,5 @@ In the test time as illustrated in (b) of the above image, when we want to trans
 - System package
   - `sudo apt-get install -y axel imagemagick` (Only used for demo)  
 - Python package
-  - `conda install pyto
+  - `conda install pytorch=0.4.1 torchvision cuda91 -y -c pytorch`
+ 
