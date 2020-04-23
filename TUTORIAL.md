@@ -31,4 +31,5 @@ In the test time as illustrated in (b) of the above image, when we want to trans
 - Python package
   - `conda install pytorch=0.4.1 torchvision cuda91 -y -c pytorch`
   - `conda install -y -c anaconda pip`
-  - `conda
+  - `conda install -y -c anaconda pyyaml`
+  - `pip ins
