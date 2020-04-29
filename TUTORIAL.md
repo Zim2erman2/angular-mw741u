@@ -34,4 +34,6 @@ In the test time as illustrated in (b) of the above image, when we want to trans
   - `conda install -y -c anaconda pyyaml`
   - `pip install tensorboard tensorboardX`
 
-### Docker Imag
+### Docker Image
+
+We also provide a [Dockerfile](Dockerfile) f
