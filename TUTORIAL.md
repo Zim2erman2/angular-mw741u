@@ -32,4 +32,6 @@ In the test time as illustrated in (b) of the above image, when we want to trans
   - `conda install pytorch=0.4.1 torchvision cuda91 -y -c pytorch`
   - `conda install -y -c anaconda pip`
   - `conda install -y -c anaconda pyyaml`
-  - `pip ins
+  - `pip install tensorboard tensorboardX`
+
+### Docker Imag
