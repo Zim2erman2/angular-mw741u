@@ -39,4 +39,4 @@ In the test time as illustrated in (b) of the above image, when we want to trans
 We also provide a [Dockerfile](Dockerfile) for building an environment for running the MUNIT code.
 
   1. Install docker-ce. Follow the instruction in the [Docker page](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
-  2. Install nvidia-doc
+  2. Install nvidia-docker. Follow the instruction in the [NVIDI
