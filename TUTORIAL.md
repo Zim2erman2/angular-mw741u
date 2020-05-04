@@ -40,4 +40,4 @@ We also provide a [Dockerfile](Dockerfile) for building an environment for runni
 
   1. Install docker-ce. Follow the instruction in the [Docker page](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
   2. Install nvidia-docker. Follow the instruction in the [NVIDIA-DOCKER README page](https://github.com/NVIDIA/nvidia-docker).
-  3. Build the docker image `dock
+  3. Build the docker image `docker build -t your-docker-image:v1.0 .
