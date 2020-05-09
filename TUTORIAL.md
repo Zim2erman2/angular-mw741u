@@ -47,4 +47,5 @@ We also provide a [Dockerfile](Dockerfile) for building an environment for runni
 
 ### Training
 
-We provide several training scripts as usage examples. They are locate
+We provide several training scripts as usage examples. They are located under `scripts` folder. 
+- `bash scripts/demo_train_edges
