@@ -47,4 +47,4 @@ We also provide a [Dockerfile](Dockerfile) for building an environment for runni
 
 ### Training
 
-We provide se
+We provide several training scripts as usage examples. They are locate
