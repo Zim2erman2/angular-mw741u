@@ -43,4 +43,8 @@ We also provide a [Dockerfile](Dockerfile) for building an environment for runni
   3. Build the docker image `docker build -t your-docker-image:v1.0 .`
   4. Run an interactive session `docker run -v YOUR_PATH:YOUR_PATH --runtime=nvidia -i -t your-docker-image:v1.0 /bin/bash`
   5. `cd YOUR_PATH`
-  6. Fo
+  6. Follow the rest of the tutorial.
+
+### Training
+
+We provide se
