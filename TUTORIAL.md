@@ -50,4 +50,4 @@ We also provide a [Dockerfile](Dockerfile) for building an environment for runni
 We provide several training scripts as usage examples. They are located under `scripts` folder. 
 - `bash scripts/demo_train_edges2handbags.sh` to train a model for multimodal sketches of handbags to images of handbags translation.
 - `bash scripts/demo_train_edges2shoes.sh` to train a model for multimodal sketches of shoes to images of shoes translation.
-- `bash scripts/demo_train_summer2winter_yosemite256.sh` to train 
+- `bash scripts/demo_train_summer2winter_yosemite256.sh` to train a model for multimodal Yosemite summer 256x256 ima
