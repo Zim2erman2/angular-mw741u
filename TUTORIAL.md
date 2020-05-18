@@ -52,4 +52,4 @@ We provide several training scripts as usage examples. They are located under `s
 - `bash scripts/demo_train_edges2shoes.sh` to train a model for multimodal sketches of shoes to images of shoes translation.
 - `bash scripts/demo_train_summer2winter_yosemite256.sh` to train a model for multimodal Yosemite summer 256x256 images to Yosemite winter 256x256 image translation.
 
-If you break down the command lines in the scrip
+If you break down the command lines in the scripts, you will find that to train a multimod
