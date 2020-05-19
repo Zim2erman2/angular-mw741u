@@ -54,4 +54,6 @@ We provide several training scripts as usage examples. They are located under `s
 
 If you break down the command lines in the scripts, you will find that to train a multimodal unsupervised image-to-image translation model you have to do
 
-1. Download the dataset you wa
+1. Download the dataset you want to use. 
+
+3. Setup the yaml file. Check out `co
