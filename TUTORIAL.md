@@ -56,4 +56,4 @@ If you break down the command lines in the scripts, you will find that to train 
 
 1. Download the dataset you want to use. 
 
-3. Setup the yaml file. Check out `configs/demo_edges2handbags_folder.yaml` for folder-based dataset organization. Change the `d
+3. Setup the yaml file. Check out `configs/demo_edges2handbags_folder.yaml` for folder-based dataset organization. Change the `data_root` field to the path of your downloaded d
