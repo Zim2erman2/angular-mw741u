@@ -61,3 +61,6 @@ If you break down the command lines in the scripts, you will find that to train 
 3. Start training
     ```
     python train.py --config configs/edges2handbags_folder.yaml
+    ```
+    
+4. Intermediate image outputs and mode
