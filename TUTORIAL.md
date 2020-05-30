@@ -63,4 +63,8 @@ If you break down the command lines in the scripts, you will find that to train 
     python train.py --config configs/edges2handbags_folder.yaml
     ```
     
-4. Intermediate image outputs and model binary files are stored in `outputs/edges2
+4. Intermediate image outputs and model binary files are stored in `outputs/edges2handbags_folder`
+
+### Testing 
+
+First, downloa
