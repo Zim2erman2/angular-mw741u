@@ -67,4 +67,4 @@ If you break down the command lines in the scripts, you will find that to train 
 
 ### Testing 
 
-First, downloa
+First, download our pretrained models for the edges2shoe
