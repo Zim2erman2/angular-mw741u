@@ -67,4 +67,6 @@ If you break down the command lines in the scripts, you will find that to train 
 
 ### Testing 
 
-First, download our pretrained models for the edges2shoe
+First, download our pretrained models for the edges2shoes task and put them in `models` folder.
+
+### Pretra
