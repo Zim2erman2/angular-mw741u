@@ -73,4 +73,4 @@ First, download our pretrained models for the edges2shoes task and put them in `
 
 |  Dataset    | Model Link     |
 |-------------|----------------|
-| edges2shoes |   [m
+| edges2shoes |   [model](https://drive.google.com/drive/folders/10IEa7gi
