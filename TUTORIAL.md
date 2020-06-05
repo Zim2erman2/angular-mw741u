@@ -69,4 +69,6 @@ If you break down the command lines in the scripts, you will find that to train 
 
 First, download our pretrained models for the edges2shoes task and put them in `models` folder.
 
-### Pretra
+### Pretrained models 
+
+|  Dataset    | Model Link     
