@@ -71,4 +71,6 @@ First, download our pretrained models for the edges2shoes task and put them in `
 
 ### Pretrained models 
 
-|  Dataset    | Model Link     
+|  Dataset    | Model Link     |
+|-------------|----------------|
+| edges2shoes |   [m
