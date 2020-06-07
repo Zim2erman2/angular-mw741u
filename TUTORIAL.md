@@ -80,4 +80,4 @@ First, download our pretrained models for the edges2shoes task and put them in `
 
 #### Multimodal Translation
 
-R
+Run the following command to translate edges to sh
