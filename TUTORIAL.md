@@ -75,4 +75,9 @@ First, download our pretrained models for the edges2shoes task and put them in `
 |-------------|----------------|
 | edges2shoes |   [model](https://drive.google.com/drive/folders/10IEa7gibOWmQQuJUIUOkh-CV4cm6k8__?usp=sharing) | 
 | edges2handbags |   coming soon |
-| summer2winter_yosemite256 | 
+| summer2winter_yosemite256 |   coming soon |
+
+
+#### Multimodal Translation
+
+R
