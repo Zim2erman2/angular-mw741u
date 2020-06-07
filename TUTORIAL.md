@@ -74,4 +74,5 @@ First, download our pretrained models for the edges2shoes task and put them in `
 |  Dataset    | Model Link     |
 |-------------|----------------|
 | edges2shoes |   [model](https://drive.google.com/drive/folders/10IEa7gibOWmQQuJUIUOkh-CV4cm6k8__?usp=sharing) | 
-| edges2handba
+| edges2handbags |   coming soon |
+| summer2winter_yosemite256 | 
