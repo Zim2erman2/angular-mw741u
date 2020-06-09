@@ -82,4 +82,4 @@ First, download our pretrained models for the edges2shoes task and put them in `
 
 Run the following command to translate edges to shoes
 
-    python test.py --config configs/edges2shoes_
+    python test.py --config configs/edges2shoes_folder.yaml --input inputs/edges2shoes_edge.jp
