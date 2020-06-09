@@ -80,4 +80,6 @@ First, download our pretrained models for the edges2shoes task and put them in `
 
 #### Multimodal Translation
 
-Run the following command to translate edges to sh
+Run the following command to translate edges to shoes
+
+    python test.py --config configs/edges2shoes_
