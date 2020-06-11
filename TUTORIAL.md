@@ -82,4 +82,6 @@ First, download our pretrained models for the edges2shoes task and put them in `
 
 Run the following command to translate edges to shoes
 
-    python test.py --config configs/edges2shoes_folder.yaml --input inputs/edges2shoes_edge.jpg --output_folder results/edges2shoes --checkpoint mod
+    python test.py --config configs/edges2shoes_folder.yaml --input inputs/edges2shoes_edge.jpg --output_folder results/edges2shoes --checkpoint models/edges2shoes.pt --a2b 1
+    
+The results are 
