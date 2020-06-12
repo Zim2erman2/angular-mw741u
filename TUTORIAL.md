@@ -84,4 +84,4 @@ Run the following command to translate edges to shoes
 
     python test.py --config configs/edges2shoes_folder.yaml --input inputs/edges2shoes_edge.jpg --output_folder results/edges2shoes --checkpoint models/edges2shoes.pt --a2b 1
     
-The results are 
+The results are stored in `results/edges2shoes` folder. By de
