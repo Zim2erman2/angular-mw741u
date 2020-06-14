@@ -87,4 +87,5 @@ Run the following command to translate edges to shoes
 The results are stored in `results/edges2shoes` folder. By default, it produces 10 random translation outputs.
 
 | Input | Translation 1 | Translation 2 | Translation 3 | Translation 4 | Translation 5 |
-|-------|---------------|---------------|---------------|---------------|---------
+|-------|---------------|---------------|---------------|---------------|---------------|
+| <img src="https://raw.githubusercontent.com/NVlabs/M
