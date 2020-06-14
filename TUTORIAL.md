@@ -88,4 +88,4 @@ The results are stored in `results/edges2shoes` folder. By default, it produces 
 
 | Input | Translation 1 | Translation 2 | Translation 3 | Translation 4 | Translation 5 |
 |-------|---------------|---------------|---------------|---------------|---------------|
-| <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/inputs/edges2shoes_edge.jpg" width="128" title="Input"> | <img src="https://raw.githubuserco
+| <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/inputs/edges2shoes_edge.jpg" width="128" title="Input"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/results/edges2shoes/
