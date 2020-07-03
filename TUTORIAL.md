@@ -91,4 +91,6 @@ The results are stored in `results/edges2shoes` folder. By default, it produces 
 | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/inputs/edges2shoes_edge.jpg" width="128" title="Input"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/results/edges2shoes/output001.jpg" width="128" title="output001"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/results/edges2shoes/output002.jpg" width="128" title="output002"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/results/edges2shoes/output003.jpg" width="128" title="output003"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/results/edges2shoes/output004.jpg" width="128" title="output004"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/results/edges2shoes/output005.jpg" width="128" title="output005"> |
 
 
-#### Example-gui
+#### Example-guided Translation
+
+The above command outputs di
