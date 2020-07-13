@@ -99,4 +99,4 @@ The above command outputs diverse shoes from an edge input. In addition, it is p
  
 | Input Photo | Style Photo | Output Photo |
 |-------|---------------|---------------|
-| <img src="https://raw.githubusercontent.com/NVlab
+| <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/inputs/edges2shoes_edge.jpg" width="1
