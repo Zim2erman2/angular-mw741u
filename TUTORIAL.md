@@ -101,4 +101,8 @@ The above command outputs diverse shoes from an edge input. In addition, it is p
 |-------|---------------|---------------|
 | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/inputs/edges2shoes_edge.jpg" width="128" title="Input"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/inputs/edges2shoes_shoe.jpg" width="128" title="Style"> | <img src="https://raw.githubusercontent.com/NVlabs/MUNIT/master/results/output000.jpg" width="128" title="Output"> |   
  
-### Yosemite Summer2Winter HD 
+### Yosemite Summer2Winter HD dataset
+
+Coming soon.
+
+
