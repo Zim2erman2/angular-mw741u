@@ -36,3 +36,24 @@ First, download the [pretrained models](https://drive.google.com/drive/folders/1
 Run the following command to translate edges to shoes
     
     python test.py --config configs/edges2shoes_folder.yaml --input inputs/edge.jpg --output_folder outputs --checkpoint models/edges2shoes.pt --a2b 1
+
+The results are stored in `outputs` folder. By default, it produces 10 random translation outputs.
+ 
+###### Example-guided Translation
+
+The above command outputs diverse shoes from an edge input. In addition, it is possible to control the style of output using an example shoe image.
+    
+    python test.py --config configs/edges2shoes_folder.yaml --input inputs/edge.jpg --output_folder outputs --checkpoint models/edges2shoes.pt --a2b 1 --style inputs/shoe.jpg
+
+ 
+#### Training
+1. Download the dataset you want to use. For example, you can use the edges2shoes dataset provided by [Zhu et al.](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
+
+3. Setup the yaml file. Check out `configs/edges2handbags_folder.yaml` for folder-based dataset organization. Change the `data_root` field to the path of your downloaded dataset. For list-based dataset organization, check out `configs/edges2handbags_list.yaml`
+
+3. Start training
+    ```
+    python train.py --config configs/edges2handbags_folder.yaml
+    ```
+    
+4. Intermediate image outputs and model binary files are stored in `outputs/edges2handbags_folder`
