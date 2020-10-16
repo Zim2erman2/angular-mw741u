@@ -44,4 +44,5 @@ dis:
   num_scales: 3               # number of scales
   pad_type: reflect           # padding type [zero/reflect]
 
-# data option
+# data options
+input_dim_a: 3                           
