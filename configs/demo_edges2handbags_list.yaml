@@ -3,4 +3,5 @@
 
 # logger options
 image_save_iter: 1000         # How often do you want to save output images during training
-image_display_iter: 100       # How often do you want to display output images during traini
+image_display_iter: 100       # How often do you want to display output images during training
+display_size: 8               # How many ima
