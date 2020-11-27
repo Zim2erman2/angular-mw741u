@@ -11,4 +11,5 @@ log_iter: 1                   # How often do you want to log the training stats
 # optimization options
 max_iter: 1000000             # maximum number of training iterations
 batch_size: 1                 # batch size
-weight_decay: 0.0001          # wei
+weight_decay: 0.0001          # weight decay
+beta1: 0.5                    
