@@ -21,4 +21,5 @@ step_size: 100000             # how often to decay learning rate
 gamma: 0.5                    # how much to decay learning rate
 gan_w: 1                      # weight of adversarial loss
 recon_x_w: 10                 # weight of image reconstruction loss
-recon_s_w: 1                  # weight of style reconstru
+recon_s_w: 1                  # weight of style reconstruction loss
+recon_c_w: 1                  # w
