@@ -41,4 +41,5 @@ dis:
   activ: lrelu                # activation function [relu/lrelu/prelu/selu/tanh]
   n_layer: 4                  # number of layers in D
   gan_type: lsgan             # GAN loss [lsgan/nsgan]
-  num_scales: 3               # numbe
+  num_scales: 3               # number of scales
+  pad_type: reflect          
