@@ -42,4 +42,7 @@ dis:
   n_layer: 4                  # number of layers in D
   gan_type: lsgan             # GAN loss [lsgan/nsgan]
   num_scales: 3               # number of scales
-  pad_type: reflect          
+  pad_type: reflect           # padding type [zero/reflect]
+
+# data options
+i
