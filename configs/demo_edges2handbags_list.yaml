@@ -45,4 +45,4 @@ dis:
   pad_type: reflect           # padding type [zero/reflect]
 
 # data options
-i
+input_dim_a: 3                              # 
