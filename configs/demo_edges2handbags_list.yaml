@@ -58,4 +58,5 @@ data_folder_test_a: ./datasets/demo_edges2handbags/testA
 data_list_test_a: ./datasets/demo_edges2handbags/list_testA.txt
 data_folder_train_b: ./datasets/demo_edges2handbags/trainB
 data_list_train_b: ./datasets/demo_edges2handbags/list_trainB.txt
-data_folder_test_b: ./datasets/demo_
+data_folder_test_b: ./datasets/demo_edges2handbags/testB
+data_list_test_b: ./datase
