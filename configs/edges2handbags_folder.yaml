@@ -8,4 +8,5 @@ display_size: 16              # How many images do you want to display each time
 snapshot_save_iter: 10000     # How often do you want to save trained models
 log_iter: 10                  # How often do you want to log the training stats
 
-# 
+# optimization options
+max_iter: 1000000            
