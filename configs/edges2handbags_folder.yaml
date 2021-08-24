@@ -15,4 +15,4 @@ weight_decay: 0.0001          # weight decay
 beta1: 0.5                    # Adam parameter
 beta2: 0.999                  # Adam parameter
 init: kaiming                 # initialization [gaussian/kaiming/xavier/orthogonal]
-lr:
+lr: 0.0001                    # initial learning 
