@@ -29,4 +29,4 @@ vgg_w: 0                      # weight of domain-invariant perceptual loss
 # model options
 gen:
   dim: 64                     # number of filters in the bottommost layer
-  m
+  mlp_dim: 256                # number of filte
