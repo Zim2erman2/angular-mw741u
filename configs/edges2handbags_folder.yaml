@@ -45,4 +45,4 @@ dis:
   pad_type: reflect           # padding type [zero/reflect]
 
 # data options
-input_dim_a: 
+input_dim_a: 3                              # number of image c
