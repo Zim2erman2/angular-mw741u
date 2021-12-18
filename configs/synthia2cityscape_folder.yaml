@@ -14,4 +14,5 @@ batch_size: 1                 # batch size
 weight_decay: 0.0001          # weight decay
 beta1: 0.5                    # Adam parameter
 beta2: 0.999                  # Adam parameter
-init: kaiming                 # initia
+init: kaiming                 # initialization [gaussian/kaiming/xavier/orthogonal]
+lr: 
