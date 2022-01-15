@@ -31,4 +31,5 @@ gen:
   dim: 64                     # number of filters in the bottommost layer
   mlp_dim: 256                # number of filters in MLP
   style_dim: 8                # length of style code
-  activ: relu                 # activation fun
+  activ: relu                 # activation function [relu/lrelu/prelu/selu/tanh]
+  n_downsam
