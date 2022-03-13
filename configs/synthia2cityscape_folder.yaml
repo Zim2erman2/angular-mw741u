@@ -51,4 +51,4 @@ num_workers: 8                              # number of data loading threads
 new_size: 512                               # first resize the shortest image side to this size
 crop_image_height: 512                      # random crop image of this height
 crop_image_width: 512                       # random crop image of this width
-data_roo
+data_root: ./datasets/synthia2cityscape/     # dataset folder loc
