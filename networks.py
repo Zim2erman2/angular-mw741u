@@ -73,3 +73,57 @@ class MsImageDis(nn.Module):
         # calculate the loss to train G
         outs0 = self.forward(input_fake)
         loss = 0
+        for it, (out0) in enumerate(outs0):
+            if self.gan_type == 'lsgan':
+                loss += torch.mean((out0 - 1)**2) # LSGAN
+            elif self.gan_type == 'nsgan':
+                all1 = Variable(torch.ones_like(out0.data).cuda(), requires_grad=False)
+                loss += torch.mean(F.binary_cross_entropy(F.sigmoid(out0), all1))
+            else:
+                assert 0, "Unsupported GAN type: {}".format(self.gan_type)
+        return loss
+
+##################################################################################
+# Generator
+##################################################################################
+
+class AdaINGen(nn.Module):
+    # AdaIN auto-encoder architecture
+    def __init__(self, input_dim, params):
+        super(AdaINGen, self).__init__()
+        dim = params['dim']
+        style_dim = params['style_dim']
+        n_downsample = params['n_downsample']
+        n_res = params['n_res']
+        activ = params['activ']
+        pad_type = params['pad_type']
+        mlp_dim = params['mlp_dim']
+
+        # style encoder
+        self.enc_style = StyleEncoder(4, input_dim, dim, style_dim, norm='none', activ=activ, pad_type=pad_type)
+
+        # content encoder
+        self.enc_content = ContentEncoder(n_downsample, n_res, input_dim, dim, 'in', activ, pad_type=pad_type)
+        self.dec = Decoder(n_downsample, n_res, self.enc_content.output_dim, input_dim, res_norm='adain', activ=activ, pad_type=pad_type)
+
+        # MLP to generate AdaIN parameters
+        self.mlp = MLP(style_dim, self.get_num_adain_params(self.dec), mlp_dim, 3, norm='none', activ=activ)
+
+    def forward(self, images):
+        # reconstruct an image
+        content, style_fake = self.encode(images)
+        images_recon = self.decode(content, style_fake)
+        return images_recon
+
+    def encode(self, images):
+        # encode an image to its content and style codes
+        style_fake = self.enc_style(images)
+        content = self.enc_content(images)
+        return content, style_fake
+
+    def decode(self, content, style):
+        # decode content and style codes to an image
+        adain_params = self.mlp(style)
+        self.assign_adain_params(adain_params, self.dec)
+        images = self.dec(content)
+        return images
