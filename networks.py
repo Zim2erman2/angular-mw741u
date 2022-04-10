@@ -220,3 +220,46 @@ class ContentEncoder(nn.Module):
 
     def forward(self, x):
         return self.model(x)
+
+class Decoder(nn.Module):
+    def __init__(self, n_upsample, n_res, dim, output_dim, res_norm='adain', activ='relu', pad_type='zero'):
+        super(Decoder, self).__init__()
+
+        self.model = []
+        # AdaIN residual blocks
+        self.model += [ResBlocks(n_res, dim, res_norm, activ, pad_type=pad_type)]
+        # upsampling blocks
+        for i in range(n_upsample):
+            self.model += [nn.Upsample(scale_factor=2),
+                           Conv2dBlock(dim, dim // 2, 5, 1, 2, norm='ln', activation=activ, pad_type=pad_type)]
+            dim //= 2
+        # use reflection padding in the last conv layer
+        self.model += [Conv2dBlock(dim, output_dim, 7, 1, 3, norm='none', activation='tanh', pad_type=pad_type)]
+        self.model = nn.Sequential(*self.model)
+
+    def forward(self, x):
+        return self.model(x)
+
+##################################################################################
+# Sequential Models
+##################################################################################
+class ResBlocks(nn.Module):
+    def __init__(self, num_blocks, dim, norm='in', activation='relu', pad_type='zero'):
+        super(ResBlocks, self).__init__()
+        self.model = []
+        for i in range(num_blocks):
+            self.model += [ResBlock(dim, norm=norm, activation=activation, pad_type=pad_type)]
+        self.model = nn.Sequential(*self.model)
+
+    def forward(self, x):
+        return self.model(x)
+
+class MLP(nn.Module):
+    def __init__(self, input_dim, output_dim, dim, n_blk, norm='none', activ='relu'):
+
+        super(MLP, self).__init__()
+        self.model = []
+        self.model += [LinearBlock(input_dim, dim, norm=norm, activation=activ)]
+        for i in range(n_blk - 2):
+            self.model += [LinearBlock(dim, dim, norm=norm, activation=activ)]
+        self.model += [LinearBlock(dim, output_dim, norm='none', activation='none')] # no output activations
