@@ -127,3 +127,56 @@ class AdaINGen(nn.Module):
         self.assign_adain_params(adain_params, self.dec)
         images = self.dec(content)
         return images
+
+    def assign_adain_params(self, adain_params, model):
+        # assign the adain_params to the AdaIN layers in model
+        for m in model.modules():
+            if m.__class__.__name__ == "AdaptiveInstanceNorm2d":
+                mean = adain_params[:, :m.num_features]
+                std = adain_params[:, m.num_features:2*m.num_features]
+                m.bias = mean.contiguous().view(-1)
+                m.weight = std.contiguous().view(-1)
+                if adain_params.size(1) > 2*m.num_features:
+                    adain_params = adain_params[:, 2*m.num_features:]
+
+    def get_num_adain_params(self, model):
+        # return the number of AdaIN parameters needed by the model
+        num_adain_params = 0
+        for m in model.modules():
+            if m.__class__.__name__ == "AdaptiveInstanceNorm2d":
+                num_adain_params += 2*m.num_features
+        return num_adain_params
+
+
+class VAEGen(nn.Module):
+    # VAE architecture
+    def __init__(self, input_dim, params):
+        super(VAEGen, self).__init__()
+        dim = params['dim']
+        n_downsample = params['n_downsample']
+        n_res = params['n_res']
+        activ = params['activ']
+        pad_type = params['pad_type']
+
+        # content encoder
+        self.enc = ContentEncoder(n_downsample, n_res, input_dim, dim, 'in', activ, pad_type=pad_type)
+        self.dec = Decoder(n_downsample, n_res, self.enc.output_dim, input_dim, res_norm='in', activ=activ, pad_type=pad_type)
+
+    def forward(self, images):
+        # This is a reduced VAE implementation where we assume the outputs are multivariate Gaussian distribution with mean = hiddens and std_dev = all ones.
+        hiddens = self.encode(images)
+        if self.training == True:
+            noise = Variable(torch.randn(hiddens.size()).cuda(hiddens.data.get_device()))
+            images_recon = self.decode(hiddens + noise)
+        else:
+            images_recon = self.decode(hiddens)
+        return images_recon, hiddens
+
+    def encode(self, images):
+        hiddens = self.enc(images)
+        noise = Variable(torch.randn(hiddens.size()).cuda(hiddens.data.get_device()))
+        return hiddens, noise
+
+    def decode(self, hiddens):
+        images = self.dec(hiddens)
+        return images
