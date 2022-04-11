@@ -319,3 +319,62 @@ class Conv2dBlock(nn.Module):
 
         # initialize activation
         if activation == 'relu':
+            self.activation = nn.ReLU(inplace=True)
+        elif activation == 'lrelu':
+            self.activation = nn.LeakyReLU(0.2, inplace=True)
+        elif activation == 'prelu':
+            self.activation = nn.PReLU()
+        elif activation == 'selu':
+            self.activation = nn.SELU(inplace=True)
+        elif activation == 'tanh':
+            self.activation = nn.Tanh()
+        elif activation == 'none':
+            self.activation = None
+        else:
+            assert 0, "Unsupported activation: {}".format(activation)
+
+        # initialize convolution
+        if norm == 'sn':
+            self.conv = SpectralNorm(nn.Conv2d(input_dim, output_dim, kernel_size, stride, bias=self.use_bias))
+        else:
+            self.conv = nn.Conv2d(input_dim, output_dim, kernel_size, stride, bias=self.use_bias)
+
+    def forward(self, x):
+        x = self.conv(self.pad(x))
+        if self.norm:
+            x = self.norm(x)
+        if self.activation:
+            x = self.activation(x)
+        return x
+
+class LinearBlock(nn.Module):
+    def __init__(self, input_dim, output_dim, norm='none', activation='relu'):
+        super(LinearBlock, self).__init__()
+        use_bias = True
+        # initialize fully connected layer
+        if norm == 'sn':
+            self.fc = SpectralNorm(nn.Linear(input_dim, output_dim, bias=use_bias))
+        else:
+            self.fc = nn.Linear(input_dim, output_dim, bias=use_bias)
+
+        # initialize normalization
+        norm_dim = output_dim
+        if norm == 'bn':
+            self.norm = nn.BatchNorm1d(norm_dim)
+        elif norm == 'in':
+            self.norm = nn.InstanceNorm1d(norm_dim)
+        elif norm == 'ln':
+            self.norm = LayerNorm(norm_dim)
+        elif norm == 'none' or norm == 'sn':
+            self.norm = None
+        else:
+            assert 0, "Unsupported normalization: {}".format(norm)
+
+        # initialize activation
+        if activation == 'relu':
+            self.activation = nn.ReLU(inplace=True)
+        elif activation == 'lrelu':
+            self.activation = nn.LeakyReLU(0.2, inplace=True)
+        elif activation == 'prelu':
+            self.activation = nn.PReLU()
+        elif activation == 'selu':
