@@ -416,3 +416,62 @@ class Vgg16(nn.Module):
 
         self.conv5_1 = nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1)
         self.conv5_2 = nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1)
+        self.conv5_3 = nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1)
+
+    def forward(self, X):
+        h = F.relu(self.conv1_1(X), inplace=True)
+        h = F.relu(self.conv1_2(h), inplace=True)
+        # relu1_2 = h
+        h = F.max_pool2d(h, kernel_size=2, stride=2)
+
+        h = F.relu(self.conv2_1(h), inplace=True)
+        h = F.relu(self.conv2_2(h), inplace=True)
+        # relu2_2 = h
+        h = F.max_pool2d(h, kernel_size=2, stride=2)
+
+        h = F.relu(self.conv3_1(h), inplace=True)
+        h = F.relu(self.conv3_2(h), inplace=True)
+        h = F.relu(self.conv3_3(h), inplace=True)
+        # relu3_3 = h
+        h = F.max_pool2d(h, kernel_size=2, stride=2)
+
+        h = F.relu(self.conv4_1(h), inplace=True)
+        h = F.relu(self.conv4_2(h), inplace=True)
+        h = F.relu(self.conv4_3(h), inplace=True)
+        # relu4_3 = h
+
+        h = F.relu(self.conv5_1(h), inplace=True)
+        h = F.relu(self.conv5_2(h), inplace=True)
+        h = F.relu(self.conv5_3(h), inplace=True)
+        relu5_3 = h
+
+        return relu5_3
+        # return [relu1_2, relu2_2, relu3_3, relu4_3]
+
+##################################################################################
+# Normalization layers
+##################################################################################
+class AdaptiveInstanceNorm2d(nn.Module):
+    def __init__(self, num_features, eps=1e-5, momentum=0.1):
+        super(AdaptiveInstanceNorm2d, self).__init__()
+        self.num_features = num_features
+        self.eps = eps
+        self.momentum = momentum
+        # weight and bias are dynamically assigned
+        self.weight = None
+        self.bias = None
+        # just dummy buffers, not used
+        self.register_buffer('running_mean', torch.zeros(num_features))
+        self.register_buffer('running_var', torch.ones(num_features))
+
+    def forward(self, x):
+        assert self.weight is not None and self.bias is not None, "Please assign weight and bias before calling AdaIN!"
+        b, c = x.size(0), x.size(1)
+        running_mean = self.running_mean.repeat(b)
+        running_var = self.running_var.repeat(b)
+
+        # Apply instance norm
+        x_reshaped = x.contiguous().view(1, b * c, *x.size()[2:])
+
+        out = F.batch_norm(
+            x_reshaped, running_mean, running_var, self.weight, self.bias,
