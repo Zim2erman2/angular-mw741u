@@ -1,4 +1,4 @@
 #!/bin/bash
 rm datasets/edges2handbags -rf
 mkdir datasets/edges2handbags -p
-axel
+axel -n 1 https://people.eecs.berkeley.edu/~tinghuiz/p
