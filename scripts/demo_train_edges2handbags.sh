@@ -5,4 +5,5 @@ axel -n 1 https://people.eecs.berkeley.edu/~tinghuiz/projects/pix2pix/datasets/e
 tar -zxvf datasets/edges2handbags/edges2handbags.tar.gz -C datasets/
 mkdir datasets/edges2handbags/train1 -p
 mkdir datasets/edges2handbags/train0 -p
-mk
+mkdir datasets/edges2handbags/test1 -p
+m
