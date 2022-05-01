@@ -6,4 +6,5 @@ tar -zxvf datasets/edges2handbags/edges2handbags.tar.gz -C datasets/
 mkdir datasets/edges2handbags/train1 -p
 mkdir datasets/edges2handbags/train0 -p
 mkdir datasets/edges2handbags/test1 -p
-m
+mkdir datasets/edges2handbags/test0 -p
+for f in datasets/edges
