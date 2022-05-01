@@ -7,4 +7,4 @@ mkdir datasets/edges2handbags/train1 -p
 mkdir datasets/edges2handbags/train0 -p
 mkdir datasets/edges2handbags/test1 -p
 mkdir datasets/edges2handbags/test0 -p
-for f in datasets/edges
+for f in datasets/edges2handbags/train/*; do convert -quality 100 -crop 50%
