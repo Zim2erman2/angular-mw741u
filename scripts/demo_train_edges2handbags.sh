@@ -12,4 +12,5 @@ for f in datasets/edges2handbags/val/*; do convert -quality 100 -crop 50%x100% +
 mv datasets/edges2handbags/train0 datasets/edges2handbags/trainA
 mv datasets/edges2handbags/train1 datasets/edges2handbags/trainB
 mv datasets/edges2handbags/test0 datasets/edges2handbags/testA
-mv datasets/edges2handbags/test1 datas
+mv datasets/edges2handbags/test1 datasets/edges2handbags/testB
+python train.py --config con
