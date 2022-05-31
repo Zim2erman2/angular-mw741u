@@ -9,4 +9,5 @@ mkdir datasets/edges2shoes/test1 -p
 mkdir datasets/edges2shoes/test0 -p
 for f in datasets/edges2shoes/train/*; do convert -quality 100 -crop 50%x100% +repage $f datasets/edges2shoes/train%d/${f##*/}; done;
 for f in datasets/edges2shoes/val/*; do convert -quality 100 -crop 50%x100% +repage $f datasets/edges2shoes/test%d/${f##*/}; done;
-mv datasets/edges2shoes/train0 datasets/edges2shoes/tr
+mv datasets/edges2shoes/train0 datasets/edges2shoes/trainA
+mv datasets/edges2shoes/train1 datasets/edges2sho
