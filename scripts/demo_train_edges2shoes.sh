@@ -11,4 +11,5 @@ for f in datasets/edges2shoes/train/*; do convert -quality 100 -crop 50%x100% +r
 for f in datasets/edges2shoes/val/*; do convert -quality 100 -crop 50%x100% +repage $f datasets/edges2shoes/test%d/${f##*/}; done;
 mv datasets/edges2shoes/train0 datasets/edges2shoes/trainA
 mv datasets/edges2shoes/train1 datasets/edges2shoes/trainB
-mv datasets/edges2shoes/test0 datasets
+mv datasets/edges2shoes/test0 datasets/edges2shoes/testA
+mv datasets/edges2sh
