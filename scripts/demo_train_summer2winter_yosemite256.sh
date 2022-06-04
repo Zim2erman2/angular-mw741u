@@ -1,3 +1,4 @@
 #!/bin/bash
 rm datasets/summer2winter_yosemite256 -p
-mkdir dat
+mkdir datasets/summer2winter_yosemite256 -p
+axel -n 1
