@@ -12,4 +12,5 @@ for f in datasets/edges2shoes/val/*; do convert -quality 100 -crop 50%x100% +rep
 mv datasets/edges2shoes/train0 datasets/edges2shoes/trainA
 mv datasets/edges2shoes/train1 datasets/edges2shoes/trainB
 mv datasets/edges2shoes/test0 datasets/edges2shoes/testA
-mv datasets/edges2sh
+mv datasets/edges2shoes/test1 datasets/edges2shoes/testB
+python tra
