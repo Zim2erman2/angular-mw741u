@@ -13,4 +13,4 @@ mv datasets/edges2shoes/train0 datasets/edges2shoes/trainA
 mv datasets/edges2shoes/train1 datasets/edges2shoes/trainB
 mv datasets/edges2shoes/test0 datasets/edges2shoes/testA
 mv datasets/edges2shoes/test1 datasets/edges2shoes/testB
-python tra
+python train.py --config configs/edges2shoes_folder.yaml
