@@ -15,4 +15,4 @@ from torchvision import transforms
 from PIL import Image
 
 parser = argparse.ArgumentParser()
-parser.add_argum
+parser.add_argument('--config', type=str, help="net configuration")
