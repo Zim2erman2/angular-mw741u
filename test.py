@@ -14,4 +14,5 @@ import os
 from torchvision import transforms
 from PIL import Image
 
-p
+parser = argparse.ArgumentParser()
+parser.add_argum
