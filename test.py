@@ -16,4 +16,5 @@ from PIL import Image
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--config', type=str, help="net configuration")
-parser.add_argument('--input', type=str,
+parser.add_argument('--input', type=str, help="input image path")
+parser.add_argu
