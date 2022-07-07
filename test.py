@@ -20,4 +20,4 @@ parser.add_argument('--input', type=str, help="input image path")
 parser.add_argument('--output_folder', type=str, help="output image path")
 parser.add_argument('--checkpoint', type=str, help="checkpoint of autoencoders")
 parser.add_argument('--style', type=str, default='', help="style image path")
-p
+parser.add_argument('--a2b', type=int, default=1, help="1 for a2b an
