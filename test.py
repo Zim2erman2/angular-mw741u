@@ -23,4 +23,4 @@ parser.add_argument('--style', type=str, default='', help="style image path")
 parser.add_argument('--a2b', type=int, default=1, help="1 for a2b and 0 for b2a")
 parser.add_argument('--seed', type=int, default=10, help="random seed")
 parser.add_argument('--num_style',type=int, default=10, help="number of styles to sample")
-parser.add_argument('-
+parser.add_argument('--synchronized', action='store_true', help="whether use syn
