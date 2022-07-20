@@ -25,4 +25,5 @@ parser.add_argument('--seed', type=int, default=10, help="random seed")
 parser.add_argument('--num_style',type=int, default=10, help="number of styles to sample")
 parser.add_argument('--synchronized', action='store_true', help="whether use synchronized style code or not")
 parser.add_argument('--output_only', action='store_true', help="whether use synchronized style code or not")
-parser.add_argument('--output_path', type=str, default='.', help
+parser.add_argument('--output_path', type=str, default='.', help="path for logs, checkpoints, and VGG model weight")
+p
