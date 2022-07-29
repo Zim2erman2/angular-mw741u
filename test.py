@@ -36,4 +36,6 @@ torch.cuda.manual_seed(opts.seed)
 if not os.path.exists(opts.output_folder):
     os.makedirs(opts.output_folder)
 
-# Load experiment s
+# Load experiment setting
+config = get_config(opts.config)
+opts.num_style = 1 if opts.st
