@@ -32,4 +32,6 @@ opts = parser.parse_args()
 
 
 torch.manual_seed(opts.seed)
-torch.cuda.manual_seed(opts.s
+torch.cuda.manual_seed(opts.seed)
+if not os.path.exists(opts.output_folder):
+    o
