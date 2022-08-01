@@ -38,4 +38,6 @@ if not os.path.exists(opts.output_folder):
 
 # Load experiment setting
 config = get_config(opts.config)
-opts.num_style = 1 if opts.st
+opts.num_style = 1 if opts.style != '' else opts.num_style
+
+# Setup model and data loa
