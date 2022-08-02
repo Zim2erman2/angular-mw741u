@@ -40,4 +40,6 @@ if not os.path.exists(opts.output_folder):
 config = get_config(opts.config)
 opts.num_style = 1 if opts.style != '' else opts.num_style
 
-# Setup model and data loa
+# Setup model and data loader
+config['vgg_model_path'] = opts.output_path
+if opt
