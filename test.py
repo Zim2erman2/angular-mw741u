@@ -43,4 +43,5 @@ opts.num_style = 1 if opts.style != '' else opts.num_style
 # Setup model and data loader
 config['vgg_model_path'] = opts.output_path
 if opts.trainer == 'MUNIT':
-    style_dim = config['g
+    style_dim = config['gen']['style_dim']
+    trainer = MUNIT_Trainer(config)
