@@ -46,4 +46,6 @@ if opts.trainer == 'MUNIT':
     style_dim = config['gen']['style_dim']
     trainer = MUNIT_Trainer(config)
 elif opts.trainer == 'UNIT':
-    trainer = UNI
+    trainer = UNIT_Trainer(config)
+else:
+    sys.exit("Only support MUNIT|UN
