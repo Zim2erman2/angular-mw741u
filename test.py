@@ -45,3 +45,5 @@ config['vgg_model_path'] = opts.output_path
 if opts.trainer == 'MUNIT':
     style_dim = config['gen']['style_dim']
     trainer = MUNIT_Trainer(config)
+elif opts.trainer == 'UNIT':
+    trainer = UNI
