@@ -48,4 +48,7 @@ if opts.trainer == 'MUNIT':
 elif opts.trainer == 'UNIT':
     trainer = UNIT_Trainer(config)
 else:
-    sys.exit("Only support MUNIT|UN
+    sys.exit("Only support MUNIT|UNIT")
+
+try:
+    state_dict = torch.load(opts.checkpoint)
