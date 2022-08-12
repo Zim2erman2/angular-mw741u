@@ -53,3 +53,6 @@ else:
 try:
     state_dict = torch.load(opts.checkpoint)
     trainer.gen_a.load_state_dict(state_dict['a'])
+    trainer.gen_b.load_state_dict(state_dict['b'])
+except:
+    s
