@@ -55,4 +55,4 @@ try:
     trainer.gen_a.load_state_dict(state_dict['a'])
     trainer.gen_b.load_state_dict(state_dict['b'])
 except:
-    s
+    state_dict = pytorch03_to_pytorch04(torch.loa
