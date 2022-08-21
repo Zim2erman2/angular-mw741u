@@ -57,4 +57,6 @@ try:
 except:
     state_dict = pytorch03_to_pytorch04(torch.load(opts.checkpoint), opts.trainer)
     trainer.gen_a.load_state_dict(state_dict['a'])
-    trai
+    trainer.gen_b.load_state_dict(state_dict['b'])
+
+t
