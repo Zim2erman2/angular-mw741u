@@ -59,4 +59,6 @@ except:
     trainer.gen_a.load_state_dict(state_dict['a'])
     trainer.gen_b.load_state_dict(state_dict['b'])
 
-t
+trainer.cuda()
+trainer.eval()
+encode = trainer.gen_a.
