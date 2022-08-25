@@ -62,4 +62,4 @@ except:
 trainer.cuda()
 trainer.eval()
 encode = trainer.gen_a.encode if opts.a2b else trainer.gen_b.encode # encode function
-style_encode = trai
+style_encode = trainer.gen_b.encode if opts.a2b else trainer.gen_a.encode # encod
