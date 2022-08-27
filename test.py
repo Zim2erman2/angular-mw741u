@@ -63,4 +63,6 @@ trainer.cuda()
 trainer.eval()
 encode = trainer.gen_a.encode if opts.a2b else trainer.gen_b.encode # encode function
 style_encode = trainer.gen_b.encode if opts.a2b else trainer.gen_a.encode # encode function
-decode = trainer.gen_b.decode if opts.a2b e
+decode = trainer.gen_b.decode if opts.a2b else trainer.gen_a.decode # decode function
+
+if 'new_size' 
