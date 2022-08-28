@@ -68,4 +68,7 @@ decode = trainer.gen_b.decode if opts.a2b else trainer.gen_a.decode # decode fun
 if 'new_size' in config:
     new_size = config['new_size']
 else:
-   
+    if opts.a2b==1:
+        new_size = config['new_size_a']
+    else:
+     
