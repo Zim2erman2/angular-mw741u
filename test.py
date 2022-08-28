@@ -65,4 +65,7 @@ encode = trainer.gen_a.encode if opts.a2b else trainer.gen_b.encode # encode fun
 style_encode = trainer.gen_b.encode if opts.a2b else trainer.gen_a.encode # encode function
 decode = trainer.gen_b.decode if opts.a2b else trainer.gen_a.decode # decode function
 
-if 'new_size' 
+if 'new_size' in config:
+    new_size = config['new_size']
+else:
+   
