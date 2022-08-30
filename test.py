@@ -71,4 +71,6 @@ else:
     if opts.a2b==1:
         new_size = config['new_size_a']
     else:
-     
+        new_size = config['new_size_b']
+
+with torch.no_grad():
