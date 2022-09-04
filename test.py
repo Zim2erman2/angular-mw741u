@@ -74,4 +74,5 @@ else:
         new_size = config['new_size_b']
 
 with torch.no_grad():
-    transform = transforms.Compose([transforms
+    transform = transforms.Compose([transforms.Resize(new_size),
+                                    tr
