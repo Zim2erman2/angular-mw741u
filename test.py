@@ -75,4 +75,5 @@ else:
 
 with torch.no_grad():
     transform = transforms.Compose([transforms.Resize(new_size),
-                                    tr
+                                    transforms.ToTensor(),
+                         
