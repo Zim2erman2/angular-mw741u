@@ -77,4 +77,5 @@ with torch.no_grad():
     transform = transforms.Compose([transforms.Resize(new_size),
                                     transforms.ToTensor(),
                                     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-    image = Variable(transform(Image.open(opts.input).convert('RGB')).unsqueeze(0).cuda()
+    image = Variable(transform(Image.open(opts.input).convert('RGB')).unsqueeze(0).cuda())
+    style_image = Variable(transform(Image.open(opts.s
