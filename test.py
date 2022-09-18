@@ -81,4 +81,6 @@ with torch.no_grad():
     style_image = Variable(transform(Image.open(opts.style).convert('RGB')).unsqueeze(0).cuda()) if opts.style != '' else None
 
     # Start testing
- 
+    content, _ = encode(image)
+
+    if opts.trainer ==
