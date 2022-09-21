@@ -85,4 +85,6 @@ with torch.no_grad():
 
     if opts.trainer == 'MUNIT':
         style_rand = Variable(torch.randn(opts.num_style, style_dim, 1, 1).cuda())
-        if opts.style != '
+        if opts.style != '':
+            _, style = style_encode(style_image)
+   
