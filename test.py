@@ -89,4 +89,5 @@ with torch.no_grad():
             _, style = style_encode(style_image)
         else:
             style = style_rand
-   
+        for j in range(opts.num_style):
+            s = 
