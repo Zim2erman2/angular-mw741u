@@ -91,4 +91,5 @@ with torch.no_grad():
             style = style_rand
         for j in range(opts.num_style):
             s = style[j].unsqueeze(0)
-            outputs = de
+            outputs = decode(content, s)
+            outputs = (outputs + 1)
