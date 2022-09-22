@@ -90,4 +90,5 @@ with torch.no_grad():
         else:
             style = style_rand
         for j in range(opts.num_style):
-            s = 
+            s = style[j].unsqueeze(0)
+            outputs = de
