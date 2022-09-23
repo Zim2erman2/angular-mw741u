@@ -93,4 +93,5 @@ with torch.no_grad():
             s = style[j].unsqueeze(0)
             outputs = decode(content, s)
             outputs = (outputs + 1) / 2.
-            path = os.path.join(opts.outp
+            path = os.path.join(opts.output_folder, 'output{:03d}.jpg'.format(j))
+            vutils.
