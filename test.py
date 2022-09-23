@@ -92,4 +92,5 @@ with torch.no_grad():
         for j in range(opts.num_style):
             s = style[j].unsqueeze(0)
             outputs = decode(content, s)
-            outputs = (outputs + 1)
+            outputs = (outputs + 1) / 2.
+            path = os.path.join(opts.outp
