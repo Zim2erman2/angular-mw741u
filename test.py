@@ -96,4 +96,5 @@ with torch.no_grad():
             path = os.path.join(opts.output_folder, 'output{:03d}.jpg'.format(j))
             vutils.save_image(outputs.data, path, padding=0, normalize=True)
     elif opts.trainer == 'UNIT':
-        out
+        outputs = decode(content)
+        outputs = (outpu
