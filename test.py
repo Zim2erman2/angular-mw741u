@@ -99,4 +99,6 @@ with torch.no_grad():
         outputs = decode(content)
         outputs = (outputs + 1) / 2.
         path = os.path.join(opts.output_folder, 'output.jpg')
-        vutils.save_image(o
+        vutils.save_image(outputs.data, path, padding=0, normalize=True)
+    else:
+ 
