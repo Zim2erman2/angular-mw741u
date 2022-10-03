@@ -105,4 +105,4 @@ with torch.no_grad():
 
     if not opts.output_only:
         # also save input images
-        vutil
+        vutils.save_image(image.data, os.path.join(opts.outpu
