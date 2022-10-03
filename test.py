@@ -101,4 +101,7 @@ with torch.no_grad():
         path = os.path.join(opts.output_folder, 'output.jpg')
         vutils.save_image(outputs.data, path, padding=0, normalize=True)
     else:
- 
+        pass
+
+    if not opts.output_only:
+      
