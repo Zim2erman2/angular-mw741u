@@ -104,4 +104,5 @@ with torch.no_grad():
         pass
 
     if not opts.output_only:
-      
+        # also save input images
+        vutil
