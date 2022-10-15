@@ -56,3 +56,64 @@ if opts.compute_IS or opts.compute_IS:
     # freeze the inception models and set eval mode
     inception.eval()
     for param in inception.parameters():
+        param.requires_grad = False
+    inception_up = nn.Upsample(size=(299, 299), mode='bilinear')
+
+# Setup model and data loader
+image_names = ImageFolder(opts.input_folder, transform=None, return_paths=True)
+data_loader = get_data_loader_folder(opts.input_folder, 1, False, new_size=config['new_size_a'], crop=False)
+
+config['vgg_model_path'] = opts.output_path
+if opts.trainer == 'MUNIT':
+    style_dim = config['gen']['style_dim']
+    trainer = MUNIT_Trainer(config)
+elif opts.trainer == 'UNIT':
+    trainer = UNIT_Trainer(config)
+else:
+    sys.exit("Only support MUNIT|UNIT")
+
+try:
+    state_dict = torch.load(opts.checkpoint)
+    trainer.gen_a.load_state_dict(state_dict['a'])
+    trainer.gen_b.load_state_dict(state_dict['b'])
+except:
+    state_dict = pytorch03_to_pytorch04(torch.load(opts.checkpoint), opts.trainer)
+    trainer.gen_a.load_state_dict(state_dict['a'])
+    trainer.gen_b.load_state_dict(state_dict['b'])
+
+trainer.cuda()
+trainer.eval()
+encode = trainer.gen_a.encode if opts.a2b else trainer.gen_b.encode # encode function
+decode = trainer.gen_b.decode if opts.a2b else trainer.gen_a.decode # decode function
+
+if opts.compute_IS:
+    IS = []
+    all_preds = []
+if opts.compute_CIS:
+    CIS = []
+
+if opts.trainer == 'MUNIT':
+    # Start testing
+    style_fixed = Variable(torch.randn(opts.num_style, style_dim, 1, 1).cuda(), volatile=True)
+    for i, (images, names) in enumerate(zip(data_loader, image_names)):
+        if opts.compute_CIS:
+            cur_preds = []
+        print(names[1])
+        images = Variable(images.cuda(), volatile=True)
+        content, _ = encode(images)
+        style = style_fixed if opts.synchronized else Variable(torch.randn(opts.num_style, style_dim, 1, 1).cuda(), volatile=True)
+        for j in range(opts.num_style):
+            s = style[j].unsqueeze(0)
+            outputs = decode(content, s)
+            outputs = (outputs + 1) / 2.
+            if opts.compute_IS or opts.compute_CIS:
+                pred = F.softmax(inception(inception_up(outputs)), dim=1).cpu().data.numpy()  # get the predicted class distribution
+            if opts.compute_IS:
+                all_preds.append(pred)
+            if opts.compute_CIS:
+                cur_preds.append(pred)
+            # path = os.path.join(opts.output_folder, 'input{:03d}_output{:03d}.jpg'.format(i, j))
+            basename = os.path.basename(names[1])
+            path = os.path.join(opts.output_folder+"_%02d"%j,basename)
+            if not os.path.exists(os.path.dirname(path)):
+                os.makedirs(os.path.dirname(path))
