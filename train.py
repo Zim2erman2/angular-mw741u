@@ -7,4 +7,6 @@ import argparse
 from torch.autograd import Variable
 from trainer import MUNIT_Trainer, UNIT_Trainer
 import torch.backends.cudnn as cudnn
-i
+import torch
+try:
+    from itertools import izip 
