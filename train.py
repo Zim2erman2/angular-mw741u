@@ -17,4 +17,5 @@ import sys
 import tensorboardX
 import shutil
 
-parser
+parser = argparse.ArgumentParser()
+parser.add_arg
