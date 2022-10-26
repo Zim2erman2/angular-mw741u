@@ -9,4 +9,7 @@ from trainer import MUNIT_Trainer, UNIT_Trainer
 import torch.backends.cudnn as cudnn
 import torch
 try:
-    from itertools import izip 
+    from itertools import izip as zip
+except ImportError: # will be 3.x series
+    pass
+import 
