@@ -12,4 +12,9 @@ try:
     from itertools import izip as zip
 except ImportError: # will be 3.x series
     pass
-import 
+import os
+import sys
+import tensorboardX
+import shutil
+
+parser
