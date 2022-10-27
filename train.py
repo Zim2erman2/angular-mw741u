@@ -18,4 +18,4 @@ import tensorboardX
 import shutil
 
 parser = argparse.ArgumentParser()
-parser.add_arg
+parser.add_argument('--config', type=str, default='configs/edge
