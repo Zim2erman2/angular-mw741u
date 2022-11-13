@@ -26,4 +26,5 @@ opts = parser.parse_args()
 
 cudnn.benchmark = True
 
-# Load 
+# Load experiment setting
+config = get_config(opts.config)
