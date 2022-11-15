@@ -30,4 +30,6 @@ cudnn.benchmark = True
 config = get_config(opts.config)
 max_iter = config['max_iter']
 display_size = config['display_size']
-config['vgg_model_pat
+config['vgg_model_path'] = opts.output_path
+
+# Setup model and data
