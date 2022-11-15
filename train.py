@@ -28,3 +28,5 @@ cudnn.benchmark = True
 
 # Load experiment setting
 config = get_config(opts.config)
+max_iter = config['max_iter']
+display_s
