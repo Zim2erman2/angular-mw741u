@@ -32,4 +32,6 @@ max_iter = config['max_iter']
 display_size = config['display_size']
 config['vgg_model_path'] = opts.output_path
 
-# Setup model and data
+# Setup model and data loader
+if opts.trainer == 'MUNIT':
+    trainer = MUNIT_Traine
