@@ -34,4 +34,6 @@ config['vgg_model_path'] = opts.output_path
 
 # Setup model and data loader
 if opts.trainer == 'MUNIT':
-    trainer = MUNIT_Traine
+    trainer = MUNIT_Trainer(config)
+elif opts.trainer == 'UNIT':
+    trainer = UNIT_Trai
