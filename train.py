@@ -36,4 +36,6 @@ config['vgg_model_path'] = opts.output_path
 if opts.trainer == 'MUNIT':
     trainer = MUNIT_Trainer(config)
 elif opts.trainer == 'UNIT':
-    trainer = UNIT_Trai
+    trainer = UNIT_Trainer(config)
+else:
+    sys.exit("Only support MUNIT|
