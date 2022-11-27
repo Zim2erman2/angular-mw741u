@@ -38,4 +38,6 @@ if opts.trainer == 'MUNIT':
 elif opts.trainer == 'UNIT':
     trainer = UNIT_Trainer(config)
 else:
-    sys.exit("Only support MUNIT|
+    sys.exit("Only support MUNIT|UNIT")
+trainer.cuda()
+train_loader_a, train
