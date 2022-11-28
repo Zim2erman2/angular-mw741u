@@ -40,4 +40,4 @@ elif opts.trainer == 'UNIT':
 else:
     sys.exit("Only support MUNIT|UNIT")
 trainer.cuda()
-train_loader_a, train
+train_loader_a, train_loader_b, test_loader_a, test_loader_b = get_all_data_loader
