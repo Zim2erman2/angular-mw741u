@@ -44,4 +44,6 @@ train_loader_a, train_loader_b, test_loader_a, test_loader_b = get_all_data_load
 train_display_images_a = torch.stack([train_loader_a.dataset[i] for i in range(display_size)]).cuda()
 train_display_images_b = torch.stack([train_loader_b.dataset[i] for i in range(display_size)]).cuda()
 test_display_images_a = torch.stack([test_loader_a.dataset[i] for i in range(display_size)]).cuda()
-test_display_images_b = torch.stack([test_loader_
+test_display_images_b = torch.stack([test_loader_b.dataset[i] for i in range(display_size)]).cuda()
+
+# S
