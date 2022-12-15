@@ -47,4 +47,5 @@ test_display_images_a = torch.stack([test_loader_a.dataset[i] for i in range(dis
 test_display_images_b = torch.stack([test_loader_b.dataset[i] for i in range(display_size)]).cuda()
 
 # Setup logger and output folders
-model_name = os.path.splitext(os.path.basename(opts.config))
+model_name = os.path.splitext(os.path.basename(opts.config))[0]
+train_writer = tensorboardX.SummaryWriter(os.path
