@@ -49,4 +49,5 @@ test_display_images_b = torch.stack([test_loader_b.dataset[i] for i in range(dis
 # Setup logger and output folders
 model_name = os.path.splitext(os.path.basename(opts.config))[0]
 train_writer = tensorboardX.SummaryWriter(os.path.join(opts.output_path + "/logs", model_name))
-output_directory = os.path.join(opts.output_path + "/outp
+output_directory = os.path.join(opts.output_path + "/outputs", model_name)
+checkpoint_directory,
