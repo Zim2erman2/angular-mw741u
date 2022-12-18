@@ -56,4 +56,4 @@ shutil.copy(opts.config, os.path.join(output_directory, 'config.yaml')) # copy c
 # Start training
 iterations = trainer.resume(checkpoint_directory, hyperparameters=config) if opts.resume else 0
 while True:
-    for
+    for it, (images_a, images_b) in enumerate(zip(tr
