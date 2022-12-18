@@ -51,4 +51,7 @@ model_name = os.path.splitext(os.path.basename(opts.config))[0]
 train_writer = tensorboardX.SummaryWriter(os.path.join(opts.output_path + "/logs", model_name))
 output_directory = os.path.join(opts.output_path + "/outputs", model_name)
 checkpoint_directory, image_directory = prepare_sub_folder(output_directory)
-shutil.copy(opts.config, os.path.join(output_directory, 'config.yaml')) # c
+shutil.copy(opts.config, os.path.join(output_directory, 'config.yaml')) # copy config file to output folder
+
+# Start training
+iteratio
