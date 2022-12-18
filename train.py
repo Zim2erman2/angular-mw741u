@@ -54,4 +54,6 @@ checkpoint_directory, image_directory = prepare_sub_folder(output_directory)
 shutil.copy(opts.config, os.path.join(output_directory, 'config.yaml')) # copy config file to output folder
 
 # Start training
-iterations = trainer.resume(checkpoint_directory, hyperparameters
+iterations = trainer.resume(checkpoint_directory, hyperparameters=config) if opts.resume else 0
+while True:
+    for
