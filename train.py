@@ -60,4 +60,4 @@ while True:
         trainer.update_learning_rate()
         images_a, images_b = images_a.cuda().detach(), images_b.cuda().detach()
 
-   
+        with Timer("Elapsed time in update: %
