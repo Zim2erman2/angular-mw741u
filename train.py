@@ -58,4 +58,6 @@ iterations = trainer.resume(checkpoint_directory, hyperparameters=config) if opt
 while True:
     for it, (images_a, images_b) in enumerate(zip(train_loader_a, train_loader_b)):
         trainer.update_learning_rate()
-        images_a, images_b 
+        images_a, images_b = images_a.cuda().detach(), images_b.cuda().detach()
+
+   
