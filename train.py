@@ -62,4 +62,5 @@ while True:
 
         with Timer("Elapsed time in update: %f"):
             # Main training code
-            train
+            trainer.dis_update(images_a, images_b, config)
+   
