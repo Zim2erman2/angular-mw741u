@@ -66,4 +66,5 @@ while True:
             trainer.gen_update(images_a, images_b, config)
             torch.cuda.synchronize()
 
-        # Du
+        # Dump training stats in log file
+        if (iterations 
