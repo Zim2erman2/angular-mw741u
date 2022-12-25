@@ -67,4 +67,5 @@ while True:
             torch.cuda.synchronize()
 
         # Dump training stats in log file
-        if (iterations 
+        if (iterations + 1) % config['log_iter'] == 0:
+            print(
