@@ -68,4 +68,4 @@ while True:
 
         # Dump training stats in log file
         if (iterations + 1) % config['log_iter'] == 0:
-            print(
+            print("Iteration: %08d/%08d" % (iterations + 1,
