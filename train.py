@@ -74,4 +74,5 @@ while True:
         # Write images
         if (iterations + 1) % config['image_save_iter'] == 0:
             with torch.no_grad():
-                test_image_outputs = trainer.sample(t
+                test_image_outputs = trainer.sample(test_display_images_a, test_display_images_b)
+   
