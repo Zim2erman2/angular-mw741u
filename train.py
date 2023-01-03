@@ -72,4 +72,6 @@ while True:
             write_loss(iterations, trainer, train_writer)
 
         # Write images
-        if (iterations + 1) % config['image_save_i
+        if (iterations + 1) % config['image_save_iter'] == 0:
+            with torch.no_grad():
+ 
