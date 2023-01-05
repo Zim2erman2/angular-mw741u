@@ -75,4 +75,4 @@ while True:
         if (iterations + 1) % config['image_save_iter'] == 0:
             with torch.no_grad():
                 test_image_outputs = trainer.sample(test_display_images_a, test_display_images_b)
-   
+                train_image_outputs = trainer.sample(tr
