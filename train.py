@@ -77,4 +77,4 @@ while True:
                 test_image_outputs = trainer.sample(test_display_images_a, test_display_images_b)
                 train_image_outputs = trainer.sample(train_display_images_a, train_display_images_b)
             write_2images(test_image_outputs, display_size, image_directory, 'test_%08d' % (iterations + 1))
-            write_2images(train_image_outputs, display_size, imag
+            write_2images(train_image_outputs, display_size, image_directory, 'train_%08d' % (iteration
