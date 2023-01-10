@@ -79,4 +79,4 @@ while True:
             write_2images(test_image_outputs, display_size, image_directory, 'test_%08d' % (iterations + 1))
             write_2images(train_image_outputs, display_size, image_directory, 'train_%08d' % (iterations + 1))
             # HTML
-            
+            write_html(output_directory + "/index.ht
