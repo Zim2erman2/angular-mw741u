@@ -81,4 +81,5 @@ while True:
             # HTML
             write_html(output_directory + "/index.html", iterations + 1, config['image_save_iter'], 'images')
 
-        if (iterations + 1) % co
+        if (iterations + 1) % config['image_display_iter'] == 0:
+            with 
