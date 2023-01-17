@@ -83,4 +83,5 @@ while True:
 
         if (iterations + 1) % config['image_display_iter'] == 0:
             with torch.no_grad():
-                image_outputs = trainer.sample(train_display_images_a, t
+                image_outputs = trainer.sample(train_display_images_a, train_display_images_b)
+            write_2images(ima
