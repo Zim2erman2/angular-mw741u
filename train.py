@@ -87,4 +87,4 @@ while True:
             write_2images(image_outputs, display_size, image_directory, 'train_current')
 
         # Save network weights
-  
+        if (iterations + 1) % config['snapshot_save_iter'] == 0:
