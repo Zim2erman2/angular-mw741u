@@ -88,4 +88,7 @@ while True:
 
         # Save network weights
         if (iterations + 1) % config['snapshot_save_iter'] == 0:
-            trainer.save(checkpoint_direct
+            trainer.save(checkpoint_directory, iterations)
+
+        iterations += 1
+        if ite
