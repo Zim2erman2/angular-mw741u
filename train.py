@@ -91,4 +91,5 @@ while True:
             trainer.save(checkpoint_directory, iterations)
 
         iterations += 1
-        if ite
+        if iterations >= max_iter:
+            sys.exit('Finis
