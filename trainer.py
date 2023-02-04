@@ -140,3 +140,58 @@ class MUNIT_Trainer(nn.Module):
             x_ab1.append(self.gen_b.decode(c_a, s_b1[i].unsqueeze(0)))
             x_ab2.append(self.gen_b.decode(c_a, s_b2[i].unsqueeze(0)))
         x_a_recon, x_b_recon = torch.cat(x_a_recon), torch.cat(x_b_recon)
+        x_ba1, x_ba2 = torch.cat(x_ba1), torch.cat(x_ba2)
+        x_ab1, x_ab2 = torch.cat(x_ab1), torch.cat(x_ab2)
+        self.train()
+        return x_a, x_a_recon, x_ab1, x_ab2, x_b, x_b_recon, x_ba1, x_ba2
+
+    def dis_update(self, x_a, x_b, hyperparameters):
+        self.dis_opt.zero_grad()
+        s_a = Variable(torch.randn(x_a.size(0), self.style_dim, 1, 1).cuda())
+        s_b = Variable(torch.randn(x_b.size(0), self.style_dim, 1, 1).cuda())
+        # encode
+        c_a, _ = self.gen_a.encode(x_a)
+        c_b, _ = self.gen_b.encode(x_b)
+        # decode (cross domain)
+        x_ba = self.gen_a.decode(c_b, s_a)
+        x_ab = self.gen_b.decode(c_a, s_b)
+        # D loss
+        self.loss_dis_a = self.dis_a.calc_dis_loss(x_ba.detach(), x_a)
+        self.loss_dis_b = self.dis_b.calc_dis_loss(x_ab.detach(), x_b)
+        self.loss_dis_total = hyperparameters['gan_w'] * self.loss_dis_a + hyperparameters['gan_w'] * self.loss_dis_b
+        self.loss_dis_total.backward()
+        self.dis_opt.step()
+
+    def update_learning_rate(self):
+        if self.dis_scheduler is not None:
+            self.dis_scheduler.step()
+        if self.gen_scheduler is not None:
+            self.gen_scheduler.step()
+
+    def resume(self, checkpoint_dir, hyperparameters):
+        # Load generators
+        last_model_name = get_model_list(checkpoint_dir, "gen")
+        state_dict = torch.load(last_model_name)
+        self.gen_a.load_state_dict(state_dict['a'])
+        self.gen_b.load_state_dict(state_dict['b'])
+        iterations = int(last_model_name[-11:-3])
+        # Load discriminators
+        last_model_name = get_model_list(checkpoint_dir, "dis")
+        state_dict = torch.load(last_model_name)
+        self.dis_a.load_state_dict(state_dict['a'])
+        self.dis_b.load_state_dict(state_dict['b'])
+        # Load optimizers
+        state_dict = torch.load(os.path.join(checkpoint_dir, 'optimizer.pt'))
+        self.dis_opt.load_state_dict(state_dict['dis'])
+        self.gen_opt.load_state_dict(state_dict['gen'])
+        # Reinitilize schedulers
+        self.dis_scheduler = get_scheduler(self.dis_opt, hyperparameters, iterations)
+        self.gen_scheduler = get_scheduler(self.gen_opt, hyperparameters, iterations)
+        print('Resume from iteration %d' % iterations)
+        return iterations
+
+    def save(self, snapshot_dir, iterations):
+        # Save generators, discriminators, and optimizers
+        gen_name = os.path.join(snapshot_dir, 'gen_%08d.pt' % (iterations + 1))
+        dis_name = os.path.join(snapshot_dir, 'dis_%08d.pt' % (iterations + 1))
+        opt_name = os.path.join(snapshot_dir, 'optimizer.pt')
