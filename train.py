@@ -92,4 +92,5 @@ while True:
 
         iterations += 1
         if iterations >= max_iter:
-            sys.exit('Finis
+            sys.exit('Finish training')
+
