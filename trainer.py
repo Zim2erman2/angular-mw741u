@@ -195,3 +195,58 @@ class MUNIT_Trainer(nn.Module):
         gen_name = os.path.join(snapshot_dir, 'gen_%08d.pt' % (iterations + 1))
         dis_name = os.path.join(snapshot_dir, 'dis_%08d.pt' % (iterations + 1))
         opt_name = os.path.join(snapshot_dir, 'optimizer.pt')
+        torch.save({'a': self.gen_a.state_dict(), 'b': self.gen_b.state_dict()}, gen_name)
+        torch.save({'a': self.dis_a.state_dict(), 'b': self.dis_b.state_dict()}, dis_name)
+        torch.save({'gen': self.gen_opt.state_dict(), 'dis': self.dis_opt.state_dict()}, opt_name)
+
+
+class UNIT_Trainer(nn.Module):
+    def __init__(self, hyperparameters):
+        super(UNIT_Trainer, self).__init__()
+        lr = hyperparameters['lr']
+        # Initiate the networks
+        self.gen_a = VAEGen(hyperparameters['input_dim_a'], hyperparameters['gen'])  # auto-encoder for domain a
+        self.gen_b = VAEGen(hyperparameters['input_dim_b'], hyperparameters['gen'])  # auto-encoder for domain b
+        self.dis_a = MsImageDis(hyperparameters['input_dim_a'], hyperparameters['dis'])  # discriminator for domain a
+        self.dis_b = MsImageDis(hyperparameters['input_dim_b'], hyperparameters['dis'])  # discriminator for domain b
+        self.instancenorm = nn.InstanceNorm2d(512, affine=False)
+
+        # Setup the optimizers
+        beta1 = hyperparameters['beta1']
+        beta2 = hyperparameters['beta2']
+        dis_params = list(self.dis_a.parameters()) + list(self.dis_b.parameters())
+        gen_params = list(self.gen_a.parameters()) + list(self.gen_b.parameters())
+        self.dis_opt = torch.optim.Adam([p for p in dis_params if p.requires_grad],
+                                        lr=lr, betas=(beta1, beta2), weight_decay=hyperparameters['weight_decay'])
+        self.gen_opt = torch.optim.Adam([p for p in gen_params if p.requires_grad],
+                                        lr=lr, betas=(beta1, beta2), weight_decay=hyperparameters['weight_decay'])
+        self.dis_scheduler = get_scheduler(self.dis_opt, hyperparameters)
+        self.gen_scheduler = get_scheduler(self.gen_opt, hyperparameters)
+
+        # Network weight initialization
+        self.apply(weights_init(hyperparameters['init']))
+        self.dis_a.apply(weights_init('gaussian'))
+        self.dis_b.apply(weights_init('gaussian'))
+
+        # Load VGG model if needed
+        if 'vgg_w' in hyperparameters.keys() and hyperparameters['vgg_w'] > 0:
+            self.vgg = load_vgg16(hyperparameters['vgg_model_path'] + '/models')
+            self.vgg.eval()
+            for param in self.vgg.parameters():
+                param.requires_grad = False
+
+    def recon_criterion(self, input, target):
+        return torch.mean(torch.abs(input - target))
+
+    def forward(self, x_a, x_b):
+        self.eval()
+        h_a, _ = self.gen_a.encode(x_a)
+        h_b, _ = self.gen_b.encode(x_b)
+        x_ba = self.gen_a.decode(h_b)
+        x_ab = self.gen_b.decode(h_a)
+        self.train()
+        return x_ab, x_ba
+
+    def __compute_kl(self, mu):
+        # def _compute_kl(self, mu, sd):
+        # mu_2 = torch.pow(mu, 2)
