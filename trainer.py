@@ -250,3 +250,45 @@ class UNIT_Trainer(nn.Module):
     def __compute_kl(self, mu):
         # def _compute_kl(self, mu, sd):
         # mu_2 = torch.pow(mu, 2)
+        # sd_2 = torch.pow(sd, 2)
+        # encoding_loss = (mu_2 + sd_2 - torch.log(sd_2)).sum() / mu_2.size(0)
+        # return encoding_loss
+        mu_2 = torch.pow(mu, 2)
+        encoding_loss = torch.mean(mu_2)
+        return encoding_loss
+
+    def gen_update(self, x_a, x_b, hyperparameters):
+        self.gen_opt.zero_grad()
+        # encode
+        h_a, n_a = self.gen_a.encode(x_a)
+        h_b, n_b = self.gen_b.encode(x_b)
+        # decode (within domain)
+        x_a_recon = self.gen_a.decode(h_a + n_a)
+        x_b_recon = self.gen_b.decode(h_b + n_b)
+        # decode (cross domain)
+        x_ba = self.gen_a.decode(h_b + n_b)
+        x_ab = self.gen_b.decode(h_a + n_a)
+        # encode again
+        h_b_recon, n_b_recon = self.gen_a.encode(x_ba)
+        h_a_recon, n_a_recon = self.gen_b.encode(x_ab)
+        # decode again (if needed)
+        x_aba = self.gen_a.decode(h_a_recon + n_a_recon) if hyperparameters['recon_x_cyc_w'] > 0 else None
+        x_bab = self.gen_b.decode(h_b_recon + n_b_recon) if hyperparameters['recon_x_cyc_w'] > 0 else None
+
+        # reconstruction loss
+        self.loss_gen_recon_x_a = self.recon_criterion(x_a_recon, x_a)
+        self.loss_gen_recon_x_b = self.recon_criterion(x_b_recon, x_b)
+        self.loss_gen_recon_kl_a = self.__compute_kl(h_a)
+        self.loss_gen_recon_kl_b = self.__compute_kl(h_b)
+        self.loss_gen_cyc_x_a = self.recon_criterion(x_aba, x_a)
+        self.loss_gen_cyc_x_b = self.recon_criterion(x_bab, x_b)
+        self.loss_gen_recon_kl_cyc_aba = self.__compute_kl(h_a_recon)
+        self.loss_gen_recon_kl_cyc_bab = self.__compute_kl(h_b_recon)
+        # GAN loss
+        self.loss_gen_adv_a = self.dis_a.calc_gen_loss(x_ba)
+        self.loss_gen_adv_b = self.dis_b.calc_gen_loss(x_ab)
+        # domain-invariant perceptual loss
+        self.loss_gen_vgg_a = self.compute_vgg_loss(self.vgg, x_ba, x_b) if hyperparameters['vgg_w'] > 0 else 0
+        self.loss_gen_vgg_b = self.compute_vgg_loss(self.vgg, x_ab, x_a) if hyperparameters['vgg_w'] > 0 else 0
+        # total loss
+        self.loss_gen_total = hyperparameters['gan_w'] * self.loss_gen_adv_a + \
