@@ -69,3 +69,52 @@ def get_all_data_loaders(conf):
         test_loader_b = get_data_loader_list(conf['data_folder_test_b'], conf['data_list_test_b'], batch_size, False,
                                                 new_size_b, new_size_b, new_size_b, num_workers, True)
     return train_loader_a, train_loader_b, test_loader_a, test_loader_b
+
+
+def get_data_loader_list(root, file_list, batch_size, train, new_size=None,
+                           height=256, width=256, num_workers=4, crop=True):
+    transform_list = [transforms.ToTensor(),
+                      transforms.Normalize((0.5, 0.5, 0.5),
+                                           (0.5, 0.5, 0.5))]
+    transform_list = [transforms.RandomCrop((height, width))] + transform_list if crop else transform_list
+    transform_list = [transforms.Resize(new_size)] + transform_list if new_size is not None else transform_list
+    transform_list = [transforms.RandomHorizontalFlip()] + transform_list if train else transform_list
+    transform = transforms.Compose(transform_list)
+    dataset = ImageFilelist(root, file_list, transform=transform)
+    loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=train, drop_last=True, num_workers=num_workers)
+    return loader
+
+def get_data_loader_folder(input_folder, batch_size, train, new_size=None,
+                           height=256, width=256, num_workers=4, crop=True):
+    transform_list = [transforms.ToTensor(),
+                      transforms.Normalize((0.5, 0.5, 0.5),
+                                           (0.5, 0.5, 0.5))]
+    transform_list = [transforms.RandomCrop((height, width))] + transform_list if crop else transform_list
+    transform_list = [transforms.Resize(new_size)] + transform_list if new_size is not None else transform_list
+    transform_list = [transforms.RandomHorizontalFlip()] + transform_list if train else transform_list
+    transform = transforms.Compose(transform_list)
+    dataset = ImageFolder(input_folder, transform=transform)
+    loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=train, drop_last=True, num_workers=num_workers)
+    return loader
+
+
+def get_config(config):
+    with open(config, 'r') as stream:
+        return yaml.load(stream)
+
+
+def eformat(f, prec):
+    s = "%.*e"%(prec, f)
+    mantissa, exp = s.split('e')
+    # add 1 to digits as 1 is taken by sign +/-
+    return "%se%d"%(mantissa, int(exp))
+
+
+def __write_images(image_outputs, display_image_num, file_name):
+    image_outputs = [images.expand(-1, 3, -1, -1) for images in image_outputs] # expand gray-scale images to 3 channels
+    image_tensor = torch.cat([images[:display_image_num] for images in image_outputs], 0)
+    image_grid = vutils.make_grid(image_tensor.data, nrow=display_image_num, padding=0, normalize=True)
+    vutils.save_image(image_grid, file_name, nrow=1)
+
+
+def write_2images(image_outputs, display_image_num, image_directory, postfix):
