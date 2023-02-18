@@ -348,3 +348,35 @@ class UNIT_Trainer(nn.Module):
         if self.dis_scheduler is not None:
             self.dis_scheduler.step()
         if self.gen_scheduler is not None:
+            self.gen_scheduler.step()
+
+    def resume(self, checkpoint_dir, hyperparameters):
+        # Load generators
+        last_model_name = get_model_list(checkpoint_dir, "gen")
+        state_dict = torch.load(last_model_name)
+        self.gen_a.load_state_dict(state_dict['a'])
+        self.gen_b.load_state_dict(state_dict['b'])
+        iterations = int(last_model_name[-11:-3])
+        # Load discriminators
+        last_model_name = get_model_list(checkpoint_dir, "dis")
+        state_dict = torch.load(last_model_name)
+        self.dis_a.load_state_dict(state_dict['a'])
+        self.dis_b.load_state_dict(state_dict['b'])
+        # Load optimizers
+        state_dict = torch.load(os.path.join(checkpoint_dir, 'optimizer.pt'))
+        self.dis_opt.load_state_dict(state_dict['dis'])
+        self.gen_opt.load_state_dict(state_dict['gen'])
+        # Reinitilize schedulers
+        self.dis_scheduler = get_scheduler(self.dis_opt, hyperparameters, iterations)
+        self.gen_scheduler = get_scheduler(self.gen_opt, hyperparameters, iterations)
+        print('Resume from iteration %d' % iterations)
+        return iterations
+
+    def save(self, snapshot_dir, iterations):
+        # Save generators, discriminators, and optimizers
+        gen_name = os.path.join(snapshot_dir, 'gen_%08d.pt' % (iterations + 1))
+        dis_name = os.path.join(snapshot_dir, 'dis_%08d.pt' % (iterations + 1))
+        opt_name = os.path.join(snapshot_dir, 'optimizer.pt')
+        torch.save({'a': self.gen_a.state_dict(), 'b': self.gen_b.state_dict()}, gen_name)
+        torch.save({'a': self.dis_a.state_dict(), 'b': self.dis_b.state_dict()}, dis_name)
+        torch.save({'gen': self.gen_opt.state_dict(), 'dis': self.dis_opt.state_dict()}, opt_name)
