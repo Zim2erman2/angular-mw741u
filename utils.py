@@ -171,3 +171,56 @@ def write_html(filename, iterations, image_save_iterations, image_directory, all
 
 
 def write_loss(iterations, trainer, train_writer):
+    members = [attr for attr in dir(trainer) \
+               if not callable(getattr(trainer, attr)) and not attr.startswith("__") and ('loss' in attr or 'grad' in attr or 'nwd' in attr)]
+    for m in members:
+        train_writer.add_scalar(m, getattr(trainer, m), iterations + 1)
+
+
+def slerp(val, low, high):
+    """
+    original: Animating Rotation with Quaternion Curves, Ken Shoemake
+    https://arxiv.org/abs/1609.04468
+    Code: https://github.com/soumith/dcgan.torch/issues/14, Tom White
+    """
+    omega = np.arccos(np.dot(low / np.linalg.norm(low), high / np.linalg.norm(high)))
+    so = np.sin(omega)
+    return np.sin((1.0 - val) * omega) / so * low + np.sin(val * omega) / so * high
+
+
+def get_slerp_interp(nb_latents, nb_interp, z_dim):
+    """
+    modified from: PyTorch inference for "Progressive Growing of GANs" with CelebA snapshot
+    https://github.com/ptrblck/prog_gans_pytorch_inference
+    """
+
+    latent_interps = np.empty(shape=(0, z_dim), dtype=np.float32)
+    for _ in range(nb_latents):
+        low = np.random.randn(z_dim)
+        high = np.random.randn(z_dim)  # low + np.random.randn(512) * 0.7
+        interp_vals = np.linspace(0, 1, num=nb_interp)
+        latent_interp = np.array([slerp(v, low, high) for v in interp_vals],
+                                 dtype=np.float32)
+        latent_interps = np.vstack((latent_interps, latent_interp))
+
+    return latent_interps[:, :, np.newaxis, np.newaxis]
+
+
+# Get model list for resume
+def get_model_list(dirname, key):
+    if os.path.exists(dirname) is False:
+        return None
+    gen_models = [os.path.join(dirname, f) for f in os.listdir(dirname) if
+                  os.path.isfile(os.path.join(dirname, f)) and key in f and ".pt" in f]
+    if gen_models is None:
+        return None
+    gen_models.sort()
+    last_model_name = gen_models[-1]
+    return last_model_name
+
+
+def load_vgg16(model_dir):
+    """ Use the model from https://github.com/abhiskk/fast-neural-style/blob/master/neural_style/utils.py """
+    if not os.path.exists(model_dir):
+        os.mkdir(model_dir)
+    if not os.path.exists(os.path.join(model_dir, 'vgg16.weight')):
