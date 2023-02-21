@@ -276,3 +276,60 @@ def weights_init(init_type='gaussian'):
         if (classname.find('Conv') == 0 or classname.find('Linear') == 0) and hasattr(m, 'weight'):
             # print m.__class__.__name__
             if init_type == 'gaussian':
+                init.normal_(m.weight.data, 0.0, 0.02)
+            elif init_type == 'xavier':
+                init.xavier_normal_(m.weight.data, gain=math.sqrt(2))
+            elif init_type == 'kaiming':
+                init.kaiming_normal_(m.weight.data, a=0, mode='fan_in')
+            elif init_type == 'orthogonal':
+                init.orthogonal_(m.weight.data, gain=math.sqrt(2))
+            elif init_type == 'default':
+                pass
+            else:
+                assert 0, "Unsupported initialization: {}".format(init_type)
+            if hasattr(m, 'bias') and m.bias is not None:
+                init.constant_(m.bias.data, 0.0)
+
+    return init_fun
+
+
+class Timer:
+    def __init__(self, msg):
+        self.msg = msg
+        self.start_time = None
+
+    def __enter__(self):
+        self.start_time = time.time()
+
+    def __exit__(self, exc_type, exc_value, exc_tb):
+        print(self.msg % (time.time() - self.start_time))
+
+
+def pytorch03_to_pytorch04(state_dict_base, trainer_name):
+    def __conversion_core(state_dict_base, trainer_name):
+        state_dict = state_dict_base.copy()
+        if trainer_name == 'MUNIT':
+            for key, value in state_dict_base.items():
+                if key.endswith(('enc_content.model.0.norm.running_mean',
+                                 'enc_content.model.0.norm.running_var',
+                                 'enc_content.model.1.norm.running_mean',
+                                 'enc_content.model.1.norm.running_var',
+                                 'enc_content.model.2.norm.running_mean',
+                                 'enc_content.model.2.norm.running_var',
+                                 'enc_content.model.3.model.0.model.1.norm.running_mean',
+                                 'enc_content.model.3.model.0.model.1.norm.running_var',
+                                 'enc_content.model.3.model.0.model.0.norm.running_mean',
+                                 'enc_content.model.3.model.0.model.0.norm.running_var',
+                                 'enc_content.model.3.model.1.model.1.norm.running_mean',
+                                 'enc_content.model.3.model.1.model.1.norm.running_var',
+                                 'enc_content.model.3.model.1.model.0.norm.running_mean',
+                                 'enc_content.model.3.model.1.model.0.norm.running_var',
+                                 'enc_content.model.3.model.2.model.1.norm.running_mean',
+                                 'enc_content.model.3.model.2.model.1.norm.running_var',
+                                 'enc_content.model.3.model.2.model.0.norm.running_mean',
+                                 'enc_content.model.3.model.2.model.0.norm.running_var',
+                                 'enc_content.model.3.model.3.model.1.norm.running_mean',
+                                 'enc_content.model.3.model.3.model.1.norm.running_var',
+                                 'enc_content.model.3.model.3.model.0.norm.running_mean',
+                                 'enc_content.model.3.model.3.model.0.norm.running_var',
+                                 )):
