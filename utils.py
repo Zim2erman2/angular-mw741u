@@ -224,3 +224,55 @@ def load_vgg16(model_dir):
     if not os.path.exists(model_dir):
         os.mkdir(model_dir)
     if not os.path.exists(os.path.join(model_dir, 'vgg16.weight')):
+        if not os.path.exists(os.path.join(model_dir, 'vgg16.t7')):
+            os.system('wget https://www.dropbox.com/s/76l3rt4kyi3s8x7/vgg16.t7?dl=1 -O ' + os.path.join(model_dir, 'vgg16.t7'))
+        vgglua = load_lua(os.path.join(model_dir, 'vgg16.t7'))
+        vgg = Vgg16()
+        for (src, dst) in zip(vgglua.parameters()[0], vgg.parameters()):
+            dst.data[:] = src
+        torch.save(vgg.state_dict(), os.path.join(model_dir, 'vgg16.weight'))
+    vgg = Vgg16()
+    vgg.load_state_dict(torch.load(os.path.join(model_dir, 'vgg16.weight')))
+    return vgg
+
+def load_inception(model_path):
+    state_dict = torch.load(model_path)
+    model = inception_v3(pretrained=False, transform_input=True)
+    model.aux_logits = False
+    num_ftrs = model.fc.in_features
+    model.fc = nn.Linear(num_ftrs, state_dict['fc.weight'].size(0))
+    model.load_state_dict(state_dict)
+    for param in model.parameters():
+        param.requires_grad = False
+    return model
+
+def vgg_preprocess(batch):
+    tensortype = type(batch.data)
+    (r, g, b) = torch.chunk(batch, 3, dim = 1)
+    batch = torch.cat((b, g, r), dim = 1) # convert RGB to BGR
+    batch = (batch + 1) * 255 * 0.5 # [-1, 1] -> [0, 255]
+    mean = tensortype(batch.data.size()).cuda()
+    mean[:, 0, :, :] = 103.939
+    mean[:, 1, :, :] = 116.779
+    mean[:, 2, :, :] = 123.680
+    batch = batch.sub(Variable(mean)) # subtract mean
+    return batch
+
+
+def get_scheduler(optimizer, hyperparameters, iterations=-1):
+    if 'lr_policy' not in hyperparameters or hyperparameters['lr_policy'] == 'constant':
+        scheduler = None # constant scheduler
+    elif hyperparameters['lr_policy'] == 'step':
+        scheduler = lr_scheduler.StepLR(optimizer, step_size=hyperparameters['step_size'],
+                                        gamma=hyperparameters['gamma'], last_epoch=iterations)
+    else:
+        return NotImplementedError('learning rate policy [%s] is not implemented', hyperparameters['lr_policy'])
+    return scheduler
+
+
+def weights_init(init_type='gaussian'):
+    def init_fun(m):
+        classname = m.__class__.__name__
+        if (classname.find('Conv') == 0 or classname.find('Linear') == 0) and hasattr(m, 'weight'):
+            # print m.__class__.__name__
+            if init_type == 'gaussian':
